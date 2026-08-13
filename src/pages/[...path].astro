@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getDirectoryIndex, listDirectoryRoutes } from '../lib/directory'
+
+export function getStaticPaths() {
+  return listDirectoryRoutes().map((route) => ({
+    params: { path: route },
+    props: { route },
+  }))
+}
+
+const { route } = Astro.props
+const index = getDirectoryIndex(route)
+const title = `Index of ${index.displayPath}`
+---
+
+<BaseLayout title={`${title} - Argvus Packages`}>
+  <section class="packages-hero compact">
+    <div class="container">
+      <span class="eyebrow">Argvus Packages</span>
+      <h1>{title}</h1>
+      <p class="lead">
+        Browse package files directly, including pacman databases, signatures and binary package archives.
+      </p>
+    </div>
+  </section>
+
+  <section class="directory-section">
+    <div class="container">
+      {route === 'arch' && (
+        <div class="repo-note">
+          <div>
+            <h2>Arch Linux repository</h2>
+            <p>Download and trust the Argvus signing key, then use argvus.conf or copy the pacman block below.</p>
+          </div>
+          <pre><code>curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
+sudo pacman-key --add /tmp/argvus.gpg
+ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"
+sudo pacman-key --lsign-key "$ARGVUS_KEY"
+
+[argvus]
+SigLevel = Required
+Server = https://argvus.github.io/packages/arch/$arch</code></pre>
+        </div>
+      )}
+
+      <div class="directory-shell">
+        <div class="directory-title">
+          <h2>{title}</h2>
+          <span>{index.entries.length} entries</span>
+        </div>
+        <table class="directory-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Last modified</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            {index.parentHref && (
+              <tr>
+                <td><a class="entry-link directory" href={index.parentHref}>../</a></td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            )}
+            {index.entries.map((entry) => (
+              <tr>
+                <td><a class={`entry-link ${entry.kind}`} href={entry.href}>{entry.name}</a></td>
+                <td>{entry.modified}</td>
+                <td>{entry.size}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

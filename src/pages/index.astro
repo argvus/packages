@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getDirectoryIndex } from '../lib/directory'
+
+const index = getDirectoryIndex('')
+---
+
+<BaseLayout title="Argvus Packages">
+  <section class="packages-hero">
+    <div class="container">
+      <span class="eyebrow">Package repositories</span>
+      <h1>Index of /packages/</h1>
+      <p class="lead">
+        Binary repositories for Argvus Linux. Arch Linux packages are available now;
+        Debian and RPM directories are reserved for future packaging targets.
+      </p>
+    </div>
+  </section>
+
+  <section class="directory-section">
+    <div class="container">
+      <div class="repo-note">
+        <div>
+          <h2>Pacman</h2>
+          <p>Install the Argvus signing key, then add this repository to /etc/pacman.conf or include it from /etc/pacman.d/argvus.conf.</p>
+        </div>
+        <pre><code>curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
+sudo pacman-key --add /tmp/argvus.gpg
+ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"
+sudo pacman-key --lsign-key "$ARGVUS_KEY"
+
+[argvus]
+SigLevel = Required
+Server = https://argvus.github.io/packages/arch/$arch</code></pre>
+      </div>
+
+      <div class="directory-shell">
+        <div class="directory-title">
+          <h2>Index of /packages/</h2>
+        </div>
+        <table class="directory-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Last modified</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            {index.entries.map((entry) => (
+              <tr>
+                <td><a class={`entry-link ${entry.kind}`} href={entry.href}>{entry.name}</a></td>
+                <td>{entry.modified}</td>
+                <td>{entry.size}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,55 @@
+name: Prune old packages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'public/arch/x86_64/*.pkg.tar.zst'
+      - 'public/arch/x86_64/*.pkg.tar.zst.sig'
+  workflow_dispatch:
+    inputs:
+      keep:
+        description: Number of versions to keep per package
+        required: false
+        default: '3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prune-packages
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    name: Keep latest package versions
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+
+    steps:
+      - name: Install tools
+        run: pacman -Sy --noconfirm git nodejs npm libarchive
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prune package files
+        run: node scripts/prune-arch-packages.mjs --keep "${KEEP_COUNT}" --apply
+        env:
+          KEEP_COUNT: ${{ inputs.keep || '3' }}
+
+      - name: Commit cleanup
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+          if git diff --quiet -- public/arch/x86_64; then
+            echo "No package cleanup needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/arch/x86_64
+          git commit -m "Prune old Arch packages"
+          git push
