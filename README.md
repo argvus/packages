@@ -84,6 +84,10 @@ sudo pacman-key --lsign-key "$ARGVUS_KEY"
 [argvus]
 SigLevel = Required
 Server = https://argvus.github.io/packages/arch/$arch
+
+[argvus-extras]
+SigLevel = Required
+Server = https://argvus.github.io/packages/arch/extras/$arch
 ```
 
 ## Documentation
@@ -100,3 +104,4 @@ Server = https://argvus.github.io/packages/arch/$arch
 - [`argvus-greeter`](https://github.com/argvus/argvus-greeter)
 - [`argvus-session`](https://github.com/argvus/argvus-session)
 - [`argvus-storage`](https://github.com/argvus/argvus-storage)
+- [`argvus-extras`](https://github.com/argvus/argvus-extras)

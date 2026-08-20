@@ -5,10 +5,11 @@ This repository is both the source for the packages project page and the storage
 ## Layout
 
 ```text
-public/arch/$arch/  pacman databases and .pkg.tar.zst files
-public/debian/      reserved for future .deb packages
-public/rpm/         reserved for future .rpm packages
-src/                Astro directory-index UI
+public/arch/$arch/         main pacman database and .pkg.tar.zst files
+public/arch/extras/$arch/  extras pacman database and .pkg.tar.zst files
+public/debian/             reserved for future .deb packages
+public/rpm/                reserved for future .rpm packages
+src/                       Astro directory-index UI
 ```
 
 ## Local site development
@@ -25,11 +26,17 @@ The Astro build copies `public/` as-is, so files under `public/arch/x86_64/` are
 https://argvus.github.io/packages/arch/x86_64/
 ```
 
+The extras repository is served from:
+
+```text
+https://argvus.github.io/packages/arch/extras/x86_64/
+```
+
 ## Package retention
 
-Keep only the latest 3 versions of each Arch package in `public/arch/x86_64/`
-to prevent the repository from growing indefinitely. The cleanup script groups
-files by package name, sorts package versions, and removes older
+Keep only the latest 3 versions of each Arch package in each repository
+directory to prevent the repository from growing indefinitely. The cleanup
+script groups files by package name, sorts package versions, and removes older
 `.pkg.tar.zst` files plus their matching `.sig` files.
 
 Preview the cleanup:
@@ -50,10 +57,17 @@ The script also accepts custom values:
 node scripts/prune-arch-packages.mjs --keep 5 --dir public/arch/x86_64 --apply
 ```
 
+For the extras repository, pass its directory explicitly:
+
+```sh
+node scripts/prune-arch-packages.mjs --dir public/arch/extras/x86_64 --apply
+```
+
 Run this after adding new packages and before committing the updated repository.
 If the publish workflow regenerates the pacman database with `repo-add`, run the
-retention cleanup before that database step so `argvus.db*` and `argvus.files*`
-only index retained packages.
+retention cleanup before that database step so `argvus.db*`,
+`argvus-extras.db*`, `argvus.files*`, and `argvus-extras.files*` only index
+retained packages.
 
 ## greetd
 
