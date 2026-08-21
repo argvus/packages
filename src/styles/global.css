@@ -195,6 +195,61 @@ h3 {
   transform: translateY(-1px);
 }
 
+/* ── Nav dropdown ─────────────────────────────────────────────────────────── */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  gap: 4px;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-dropdown-trigger svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  min-width: 160px;
+  padding: 4px;
+  border: 1px solid var(--lp-border);
+  border-radius: 10px;
+  background: var(--lp-bg-soft);
+  box-shadow: var(--lp-shadow);
+  z-index: 100;
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--lp-fg-muted);
+  white-space: nowrap;
+  transition:
+    color 0.15s,
+    background 0.15s;
+}
+
+.nav-dropdown-item:hover {
+  color: var(--lp-fg);
+  background: var(--lp-card-hover);
+  text-decoration: none;
+}
+
+.nav-dropdown-menu[hidden] {
+  display: none;
+}
+
 /* ── Theme toggle ─────────────────────────────────────────────────────────── */
 
 .lang-toggle {

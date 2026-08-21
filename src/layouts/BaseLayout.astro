@@ -81,7 +81,17 @@ const keywords =
         <nav class="site-nav" aria-label="Main navigation">
           <div class="nav-links">
             <a class="nav-link" href="https://argvus.github.io/docs/intro/">Documentation</a>
-            <a class="nav-link" href={`${base}arch/`}>Arch repository</a>
+            <div class="nav-dropdown" data-nav-dropdown>
+              <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
+                Repository
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
+                <a class="nav-dropdown-item" href={`${base}arch/`}>Arch Linux</a>
+              </div>
+            </div>
             <a class="nav-link" href={githubOrgUrl}>GitHub</a>
           </div>
           <ThemeToggle />
@@ -147,6 +157,28 @@ const keywords =
 
       document.addEventListener('click', (e) => {
         if (!e.target.closest('[data-theme-toggle]')) menu.hidden = true
+        if (!e.target.closest('[data-nav-dropdown]')) {
+          document.querySelectorAll('[data-nav-dropdown-menu]').forEach((dropdownMenu) => {
+            dropdownMenu.hidden = true
+          })
+        }
+      })
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          menu.hidden = true
+          document.querySelectorAll('[data-nav-dropdown-menu]').forEach((dropdownMenu) => {
+            dropdownMenu.hidden = true
+          })
+        }
+      })
+
+      document.querySelectorAll('[data-nav-dropdown-trigger]').forEach((trigger) => {
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation()
+          const dropdownMenu = trigger.nextElementSibling
+          dropdownMenu.hidden = !dropdownMenu.hidden
+        })
       })
 
       media.addEventListener('change', render)
