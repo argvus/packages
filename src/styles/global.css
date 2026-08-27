@@ -146,12 +146,29 @@ h3 {
 }
 
 .brand-wordmark {
-  width: 160px;
+  width: 100px;
   height: auto;
   flex: 0 0 auto;
   opacity: 1;
   margin-left: -10px;
   margin-top: 5px;
+}
+
+.beta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 142, 42, 0.4);
+  background: rgba(217, 142, 42, 0.1);
+  color: #d98e2a;
+  font-family: var(--lp-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .site-nav {
@@ -170,12 +187,13 @@ h3 {
   padding: 4px;
   border: 1px solid var(--lp-border);
   border-radius: 10px;
-  background: var(--lp-card);
+  background: var(--lp-bg-soft);
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   min-height: 32px;
   padding: 6px 11px;
   border-radius: 8px;
@@ -187,12 +205,30 @@ h3 {
     transform 0.15s ease;
 }
 
+.nav-link i {
+  font-size: 0.85em;
+  flex-shrink: 0;
+}
+
 .nav-link:hover,
 .nav-link:focus-visible {
   color: var(--lp-fg);
   background: var(--lp-card-hover);
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+.nav-link-donate {
+  background: var(--lp-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-link-donate:hover,
+.nav-link-donate:focus-visible {
+  background: var(--lp-accent-high);
+  color: #fff;
+  box-shadow: 0 4px 16px -4px var(--lp-accent);
 }
 
 /* ── Nav dropdown ─────────────────────────────────────────────────────────── */
@@ -225,12 +261,14 @@ h3 {
   border: 1px solid var(--lp-border);
   border-radius: 10px;
   background: var(--lp-bg-soft);
-  box-shadow: var(--lp-shadow);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   z-index: 100;
 }
 
 .nav-dropdown-item {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 12px;
   border-radius: 8px;
   color: var(--lp-fg-muted);
@@ -238,6 +276,11 @@ h3 {
   transition:
     color 0.15s,
     background 0.15s;
+}
+
+.nav-dropdown-item i {
+  font-size: 0.85em;
+  flex-shrink: 0;
 }
 
 .nav-dropdown-item:hover {

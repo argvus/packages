@@ -1,3 +1,19 @@
 {
-  "maintenance": false
+  "maintenance": false,
+  "contributionLinks": {
+    "enable": true,
+    "mode": "paypal",
+    "stripe": {
+      "1": "STRIPE_PAYMENT_LINK_FOR_1_USD",
+      "5": "STRIPE_PAYMENT_LINK_FOR_5_USD",
+      "10": "STRIPE_PAYMENT_LINK_FOR_10_USD",
+      "20": "STRIPE_PAYMENT_LINK_FOR_20_USD",
+      "50": "STRIPE_PAYMENT_LINK_FOR_50_USD"
+    },
+    "paypal": {
+      "BRL": "https://www.paypal.com/donate/?hosted_button_id=XJKGA4DPNUMPY",
+      "USD": "https://www.paypal.com/donate/?hosted_button_id=RA8D8YAKK6Q2A"
+    },
+    "single": "https://buymeacoffee.com/williamcanin"
+  }
 }

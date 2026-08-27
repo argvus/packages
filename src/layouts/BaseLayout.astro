@@ -1,6 +1,14 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro'
 import '../styles/global.css'
+import fs from 'node:fs'
+import { resolve } from 'node:path'
+import siteConfig from '../site-config.json'
+
+const { version } = JSON.parse(
+  fs.readFileSync(resolve(process.cwd(), 'package.json'), 'utf8'),
+)
+const isBeta = version.startsWith('0.')
 
 interface Props {
   title: string
@@ -21,6 +29,8 @@ const argvusWordmarkUrl =
   'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/argvus-text.svg'
 const keywords =
   'argvus, argvus linux, hyprland, wayland, arch linux packages, pacman repository, argvus-appearance, argvus-greeter, argvus-session, argvus-storage, signed packages, linux desktop'
+const contributionConfig = siteConfig.contributionLinks
+const contributionEnabled = contributionConfig.enable
 ---
 
 <!doctype html>
@@ -44,6 +54,7 @@ const keywords =
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${base}favicon.png`} />
     <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'DataCatalog',
@@ -77,22 +88,25 @@ const keywords =
         <a class="brand" href="https://argvus.github.io/">
           <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
           <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
+          {isBeta && <span class="beta-badge">Beta</span>}
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           <div class="nav-links">
-            <a class="nav-link" href="https://argvus.github.io/docs/intro/">Documentation</a>
+            <a class="nav-link" href="https://argvus.github.io/docs/intro/"><i class="fa-solid fa-book-open"></i>Documentation</a>
             <div class="nav-dropdown" data-nav-dropdown>
               <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
+                <i class="fa-solid fa-cube"></i>
                 Repository
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="m6 9 6 6 6-6"></path>
                 </svg>
               </button>
               <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
-                <a class="nav-dropdown-item" href={`${base}arch/`}>Arch Linux</a>
+                <a class="nav-dropdown-item" href={`${base}arch/`}><i class="fa-brands fa-linux"></i>Arch Linux</a>
               </div>
             </div>
-            <a class="nav-link" href={githubOrgUrl}>GitHub</a>
+            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>GitHub</a>
+            {contributionEnabled && <a class="nav-link nav-link-donate" href="https://argvus.github.io/#support"><i class="fa-solid fa-heart"></i>Donate</a>}
           </div>
           <ThemeToggle />
         </nav>
