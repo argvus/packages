@@ -98,7 +98,6 @@ Server = https://argvus.github.io/packages/arch/extras/$arch
 
 ## Related repositories
 
-- [`argvus-pkgbuild`](https://github.com/argvus/argvus-pkgbuild)
 - [`argvus`](https://github.com/argvus/argvus)
 - [`argvus-appearance`](https://github.com/argvus/argvus-appearance)
 - [`argvus-greeter`](https://github.com/argvus/argvus-greeter)

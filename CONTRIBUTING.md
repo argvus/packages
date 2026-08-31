@@ -19,4 +19,4 @@ Include:
 - how `npm run build` behaved;
 - any impact on pacman repository URLs.
 
-Package publishing normally happens from `argvus-pkgbuild`; manual package file changes should be rare and clearly justified.
+Package publishing normally happens from the per-project `packaging/` directories and from `argvus-extras` for third-party packages; manual package file changes should be rare and clearly justified.
