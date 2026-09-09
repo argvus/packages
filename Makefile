@@ -23,7 +23,7 @@ serve:
 	@npm run dev
 
 clean:
-	@rm -rf dist .astro _pages .jekyll-cache
+	@rm -rf dist .astro node_modules
 
 # ----- GIT -----
 commit:
