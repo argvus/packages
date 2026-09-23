@@ -82,11 +82,11 @@ sudo pacman-key --lsign-key "$ARGVUS_KEY"
 
 ```text
 [argvus]
-SigLevel = Required
+SigLevel = Required TrustedOnly
 Server = https://argvus.github.io/packages/arch/$arch
 
 [argvus-extras]
-SigLevel = Required
+SigLevel = Required TrustedOnly
 Server = https://argvus.github.io/packages/arch/extras/$arch
 ```
 

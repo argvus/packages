@@ -34,11 +34,11 @@ ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | hea
 sudo pacman-key --lsign-key "$ARGVUS_KEY"
 
 [argvus]
-SigLevel = Required
+SigLevel = Required TrustedOnly
 Server = https://argvus.github.io/packages/arch/$arch
 
 [argvus-extras]
-SigLevel = Required
+SigLevel = Required TrustedOnly
 Server = https://argvus.github.io/packages/arch/extras/$arch</code></pre>
       </div>
 
