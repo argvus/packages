@@ -1466,13 +1466,17 @@ h4 {
   align-items: center;
   width: 100%;
   padding: 8px 10px;
+  border: 0;
   border-radius: 0;
+  background: transparent;
   color: var(--lp-fg);
   font-family: var(--lp-mono);
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
+  text-align: left;
   white-space: nowrap;
 }
 
