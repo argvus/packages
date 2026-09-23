@@ -16,7 +16,7 @@ dotfiles into `~/.config` on first login. Runtime config is resolved as:
 `$XDG_CONFIG_HOME/<app>` first, then `/usr/share/argvus/<app>`.
 
 Installing `argvus` also installs the official component packages:
-`argvus-appearance`, `argvus-storage`, `argvus-session` and `argvus-greeter`.
+`argvus-appearance`, `argvus-removable-devices`, `argvus-session` and `argvus-greeter`.
 
 Use `argvus-setup --copy <app>` or `argvus-setup --copy-all` only when you want
 to create user-owned overrides for customization. Existing user configs remain
@@ -102,5 +102,5 @@ Server = https://argvus.github.io/packages/arch/extras/$arch
 - [`argvus-appearance`](https://github.com/argvus/argvus-appearance)
 - [`argvus-greeter`](https://github.com/argvus/argvus-greeter)
 - [`argvus-session`](https://github.com/argvus/argvus-session)
-- [`argvus-storage`](https://github.com/argvus/argvus-storage)
+- [`argvus-removable-devices`](https://github.com/argvus/argvus-removable-devices)
 - [`argvus-extras`](https://github.com/argvus/argvus-extras)
