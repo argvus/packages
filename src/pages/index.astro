@@ -5,14 +5,18 @@ import { getDirectoryIndex } from '../lib/directory'
 const index = getDirectoryIndex('')
 ---
 
-<BaseLayout title="Argvus Packages">
+<BaseLayout
+  title="Argvus Packages"
+  titlePt="Pacotes Argvus"
+  descriptionPt="Repositórios binários do Argvus Linux. Os pacotes Arch Linux estão disponíveis agora; os diretórios Debian e RPM estão reservados para futuros alvos de empacotamento."
+>
   <section class="packages-hero">
     <div class="container">
-      <span class="eyebrow">Package repositories</span>
-      <h1>Index of /packages/</h1>
+      <span class="eyebrow" data-i18n="packageRepositories">Package repositories</span>
+      <h1 data-i18n="rootIndex">Index of /packages/</h1>
       <p class="lead">
-        Binary repositories for Argvus Linux. Arch Linux packages are available now;
-        Debian and RPM directories are reserved for future packaging targets.
+        <span data-i18n="rootLead">Binary repositories for Argvus Linux. Arch Linux packages are available now;
+        Debian and RPM directories are reserved for future packaging targets.</span>
       </p>
     </div>
   </section>
@@ -21,8 +25,8 @@ const index = getDirectoryIndex('')
     <div class="container">
       <div class="repo-note">
         <div>
-          <h2>Pacman</h2>
-          <p>Install the Argvus signing key, then add this repository to /etc/pacman.conf or include it from /etc/pacman.d/argvus.conf.</p>
+            <h2 data-i18n="pacman">Pacman</h2>
+            <p data-i18n="pacmanLead">Install the Argvus signing key, then add this repository to /etc/pacman.conf or include it from /etc/pacman.d/argvus.conf.</p>
         </div>
         <pre><code>curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
 sudo pacman-key --add /tmp/argvus.gpg
@@ -40,14 +44,14 @@ Server = https://argvus.github.io/packages/arch/extras/$arch</code></pre>
 
       <div class="directory-shell">
         <div class="directory-title">
-          <h2>Index of /packages/</h2>
+          <h2 data-i18n="rootIndex">Index of /packages/</h2>
         </div>
         <table class="directory-table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Last modified</th>
-              <th>Size</th>
+              <th data-i18n="name">Name</th>
+              <th data-i18n="lastModified">Last modified</th>
+              <th data-i18n="size">Size</th>
             </tr>
           </thead>
           <tbody>

@@ -1,5 +1,5 @@
 {
-  "maintenance": true,
+  "maintenance": false,
   "contributionLinks": {
     "enable": true,
     "mode": "paypal",

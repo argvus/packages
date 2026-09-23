@@ -12,12 +12,16 @@ const isBeta = version.startsWith('0.')
 
 interface Props {
   title: string
+  titlePt?: string
   description?: string
+  descriptionPt?: string
 }
 
 const {
   title,
+  titlePt = title,
   description = 'Signed Arch Linux package repository for Argvus, the complete Hyprland and Wayland desktop with official component packages.',
+  descriptionPt = 'Repositório de pacotes Arch Linux assinados para o Argvus, o desktop completo para Hyprland e Wayland com pacotes oficiais de componentes.',
 } = Astro.props
 const base = import.meta.env.BASE_URL
 const siteUrl = 'https://argvus.github.io'
@@ -34,12 +38,12 @@ const contributionEnabled = contributionConfig.enable
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-title-en={title} data-title-pt={titlePt} data-description-en={description} data-description-pt={descriptionPt}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={description} data-page-description />
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={pageUrl} />
@@ -92,21 +96,41 @@ const contributionEnabled = contributionConfig.enable
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           <div class="nav-links">
-            <a class="nav-link" href="https://argvus.github.io/docs/intro/"><i class="fa-solid fa-book-open"></i>Documentation</a>
+            <a class="nav-link" href="https://argvus.github.io/docs/intro/"><i class="fa-solid fa-book-open"></i><span data-i18n="documentation">Documentation</span></a>
             <div class="nav-dropdown" data-nav-dropdown>
               <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
                 <i class="fa-solid fa-cube"></i>
-                Repository
+                <span data-i18n="repository">Repository</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="m6 9 6 6 6-6"></path>
                 </svg>
               </button>
               <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
-                <a class="nav-dropdown-item" href={`${base}arch/`}><i class="fa-brands fa-linux"></i>Arch Linux</a>
+                <a class="nav-dropdown-item" href={`${base}arch/`}><i class="fa-brands fa-linux"></i><span data-i18n="archLinux">Arch Linux</span></a>
               </div>
             </div>
-            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>GitHub</a>
-            {contributionEnabled && <a class="nav-link nav-link-donate" href="https://argvus.github.io/#support"><i class="fa-solid fa-heart"></i>Donate</a>}
+            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i><span data-i18n="github">GitHub</span></a>
+            {contributionEnabled && <a class="nav-link nav-link-donate" href="https://argvus.github.io/#support"><i class="fa-solid fa-heart"></i><span data-i18n="donate">Donate</span></a>}
+          </div>
+          <div class="lang-toggle" data-lang-toggle>
+            <button
+              class="lang-toggle-btn"
+              type="button"
+              data-lang-current
+              aria-label="Change language"
+              data-i18n-aria="languageAria"
+              aria-haspopup="menu"
+            >
+              <span data-language-current>EN</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+
+            <div class="lang-toggle-menu" data-lang-menu hidden>
+              <button class="lang-option" type="button" data-language-option="en" aria-current="page">English</button>
+              <button class="lang-option" type="button" data-language-option="pt">Português</button>
+            </div>
           </div>
           <ThemeToggle />
         </nav>
@@ -121,7 +145,7 @@ const contributionEnabled = contributionConfig.enable
       <div class="container">
         <div class="footer-bottom">
           <span>© {new Date().getFullYear()} Argvus</span>
-          <span>Packages hosted on GitHub Pages</span>
+          <span data-i18n="packagesHosted">Packages hosted on GitHub Pages</span>
         </div>
       </div>
     </footer>
@@ -133,6 +157,63 @@ const contributionEnabled = contributionConfig.enable
       const btn = document.querySelector('[data-theme-current]')
       const menu = document.querySelector('[data-theme-menu]')
       const options = Array.from(document.querySelectorAll('[data-theme-option]'))
+      const langBtn = document.querySelector('[data-lang-current]')
+      const langMenu = document.querySelector('[data-lang-menu]')
+      const languageCurrent = document.querySelector('[data-language-current]')
+      const languageOptions = Array.from(document.querySelectorAll('[data-language-option]'))
+      const languageTranslations = {
+        en: {
+          documentation: 'Documentation',
+          repository: 'Repository',
+          archLinux: 'Arch Linux',
+          github: 'GitHub',
+          donate: 'Donate',
+          packagesHosted: 'Packages hosted on GitHub Pages',
+          themeAria: 'Change theme',
+          languageAria: 'Change language',
+          themeLight: 'Light',
+          themeDark: 'Dark',
+          themeSystem: 'System',
+          packageRepositories: 'Package repositories',
+          rootIndex: 'Index of /packages/',
+          rootLead: 'Binary repositories for Argvus Linux. Arch Linux packages are available now; Debian and RPM directories are reserved for future packaging targets.',
+          pacman: 'Pacman',
+          pacmanLead: 'Install the Argvus signing key, then add this repository to /etc/pacman.conf or include it from /etc/pacman.d/argvus.conf.',
+          name: 'Name',
+          lastModified: 'Last modified',
+          size: 'Size',
+          argvusPackages: 'Argvus Packages',
+          directoryLead: 'Browse package files directly, including pacman databases, signatures and binary package archives.',
+          archRepository: 'Arch Linux repository',
+          archRepositoryLead: 'Download and trust the Argvus signing key, then use argvus.conf or copy the pacman block below.',
+        },
+        pt: {
+          documentation: 'Documentação',
+          repository: 'Repositório',
+          archLinux: 'Arch Linux',
+          github: 'GitHub',
+          donate: 'Apoiar',
+          packagesHosted: 'Pacotes hospedados no GitHub Pages',
+          themeAria: 'Alterar tema',
+          languageAria: 'Alterar idioma',
+          themeLight: 'Claro',
+          themeDark: 'Escuro',
+          themeSystem: 'Sistema',
+          packageRepositories: 'Repositórios de pacotes',
+          rootIndex: 'Índice de /packages/',
+          rootLead: 'Repositórios binários do Argvus Linux. Os pacotes Arch Linux estão disponíveis agora; os diretórios Debian e RPM estão reservados para futuros alvos de empacotamento.',
+          pacman: 'Pacman',
+          pacmanLead: 'Instale a chave de assinatura do Argvus e adicione este repositório a /etc/pacman.conf ou inclua-o a partir de /etc/pacman.d/argvus.conf.',
+          name: 'Nome',
+          lastModified: 'Última modificação',
+          size: 'Tamanho',
+          argvusPackages: 'Pacotes Argvus',
+          directoryLead: 'Navegue diretamente pelos arquivos de pacotes, incluindo bancos de dados do pacman, assinaturas e arquivos binários de pacotes.',
+          archRepository: 'Repositório Arch Linux',
+          archRepositoryLead: 'Baixe e confie na chave de assinatura do Argvus; depois use argvus.conf ou copie o bloco do pacman abaixo.',
+        },
+      }
+      const LANGUAGE_KEY = 'argvus-packages-language'
 
       const currentTheme = () => {
         const stored = localStorage.getItem(STORAGE_KEY)
@@ -158,8 +239,44 @@ const contributionEnabled = contributionConfig.enable
         render()
       }
 
+      const currentLanguage = () => {
+        const stored = localStorage.getItem(LANGUAGE_KEY)
+        if (stored === 'en' || stored === 'pt') return stored
+        return navigator.language.toLowerCase().startsWith('pt') ? 'pt' : 'en'
+      }
+
+      const setLanguage = (language) => {
+        const translations = languageTranslations[language]
+        localStorage.setItem(LANGUAGE_KEY, language)
+        document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en'
+        document.title = document.documentElement.dataset[`title${language === 'pt' ? 'Pt' : 'En'}`]
+        document.querySelector('[data-page-description]').content =
+          document.documentElement.dataset[`description${language === 'pt' ? 'Pt' : 'En'}`]
+        languageCurrent.textContent = language.toUpperCase()
+        languageOptions.forEach((option) => {
+          option.setAttribute('aria-current', String(option.dataset.languageOption === language))
+        })
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const key = element.dataset.i18n
+          element.textContent = key === 'directoryIndex'
+            ? `${language === 'pt' ? 'Índice de' : 'Index of'} ${element.dataset.directoryPath}`
+            : translations[key]
+        })
+        document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
+          element.setAttribute('aria-label', translations[element.dataset.i18nAria])
+        })
+      }
+
       btn.addEventListener('click', () => {
         menu.hidden = !menu.hidden
+        langMenu.hidden = true
+      })
+
+      languageOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          setLanguage(option.dataset.languageOption)
+          langMenu.hidden = true
+        })
       })
 
       options.forEach((opt) => {
@@ -169,8 +286,14 @@ const contributionEnabled = contributionConfig.enable
         })
       })
 
+      langBtn.addEventListener('click', () => {
+        langMenu.hidden = !langMenu.hidden
+        menu.hidden = true
+      })
+
       document.addEventListener('click', (e) => {
         if (!e.target.closest('[data-theme-toggle]')) menu.hidden = true
+        if (!e.target.closest('[data-lang-toggle]')) langMenu.hidden = true
         if (!e.target.closest('[data-nav-dropdown]')) {
           document.querySelectorAll('[data-nav-dropdown-menu]').forEach((dropdownMenu) => {
             dropdownMenu.hidden = true
@@ -181,6 +304,7 @@ const contributionEnabled = contributionConfig.enable
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           menu.hidden = true
+          langMenu.hidden = true
           document.querySelectorAll('[data-nav-dropdown-menu]').forEach((dropdownMenu) => {
             dropdownMenu.hidden = true
           })
@@ -197,6 +321,7 @@ const contributionEnabled = contributionConfig.enable
 
       media.addEventListener('change', render)
       render()
+      setLanguage(currentLanguage())
     </script>
   </body>
 </html>

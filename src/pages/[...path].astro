@@ -12,15 +12,16 @@ export function getStaticPaths() {
 const { route } = Astro.props
 const index = getDirectoryIndex(route)
 const title = `Index of ${index.displayPath}`
+const titlePt = `Índice de ${index.displayPath} - Pacotes Argvus`
 ---
 
-<BaseLayout title={`${title} - Argvus Packages`}>
+<BaseLayout title={`${title} - Argvus Packages`} titlePt={titlePt}>
   <section class="packages-hero compact">
     <div class="container">
-      <span class="eyebrow">Argvus Packages</span>
-      <h1>{title}</h1>
+      <span class="eyebrow" data-i18n="argvusPackages">Argvus Packages</span>
+      <h1 data-i18n="directoryIndex" data-directory-path={index.displayPath}>{title}</h1>
       <p class="lead">
-        Browse package files directly, including pacman databases, signatures and binary package archives.
+        <span data-i18n="directoryLead">Browse package files directly, including pacman databases, signatures and binary package archives.</span>
       </p>
     </div>
   </section>
@@ -30,8 +31,8 @@ const title = `Index of ${index.displayPath}`
       {route === 'arch' && (
         <div class="repo-note">
           <div>
-            <h2>Arch Linux repository</h2>
-            <p>Download and trust the Argvus signing key, then use argvus.conf or copy the pacman block below.</p>
+            <h2 data-i18n="archRepository">Arch Linux repository</h2>
+            <p data-i18n="archRepositoryLead">Download and trust the Argvus signing key, then use argvus.conf or copy the pacman block below.</p>
           </div>
           <pre><code>curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
 sudo pacman-key --add /tmp/argvus.gpg
@@ -50,15 +51,15 @@ Server = https://argvus.github.io/packages/arch/extras/$arch</code></pre>
 
       <div class="directory-shell">
         <div class="directory-title">
-          <h2>{title}</h2>
+          <h2 data-i18n="directoryIndex" data-directory-path={index.displayPath}>{title}</h2>
           <span>{index.entries.length} entries</span>
         </div>
         <table class="directory-table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Last modified</th>
-              <th>Size</th>
+              <th data-i18n="name">Name</th>
+              <th data-i18n="lastModified">Last modified</th>
+              <th data-i18n="size">Size</th>
             </tr>
           </thead>
           <tbody>
