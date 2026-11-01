@@ -1,6 +1,6 @@
-# Argvus Packages
+# ARGVUS Packages
 
-Binary package repository for Argvus, published as a GitHub Pages project page at:
+Binary package repository for ARGVUS, published as a GitHub Pages project page at:
 
 ```text
 https://argvus.github.io/packages/
