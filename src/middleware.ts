@@ -2,6 +2,7 @@ import { defineMiddleware } from 'astro:middleware'
 import siteConfig from './site-config.json'
 
 const base = import.meta.env.BASE_URL
+const notFoundPath = `${base}404/`
 
 const maintenanceHtml = `<!doctype html>
 <html lang="en">
@@ -38,6 +39,7 @@ export const onRequest = defineMiddleware((context, next) => {
 
   if (
     siteConfig.maintenance &&
+    pathname !== notFoundPath &&
     (context.request.method === 'GET' || context.request.method === 'HEAD') &&
     !pathname.startsWith(`${base}_astro/`) &&
     !pathname.startsWith(`${base}_image`) &&

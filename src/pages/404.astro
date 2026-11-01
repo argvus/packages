@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const base = import.meta.env.BASE_URL
+---
+
+<BaseLayout
+  title="404 | ARGVUS Packages"
+  titlePt="404 | Pacotes ARGVUS"
+  description="The requested page could not be found in the ARGVUS package repository."
+  descriptionPt="A página solicitada não foi encontrada no repositório de pacotes ARGVUS."
+>
+  <section class="not-found">
+    <div class="not-found-content">
+      <span class="eyebrow" data-i18n="notFoundEyebrow">404 error</span>
+      <h1 data-i18n="notFoundTitle">Page not found</h1>
+      <p data-i18n="notFoundDescription">Check the URL or return to the package index.</p>
+      <a class="btn btn-primary" href={base} data-i18n="notFoundHome">Back to package index</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    position: relative;
+    display: grid;
+    min-height: min(68vh, 720px);
+    place-items: center;
+    padding: clamp(4rem, 10vw, 8rem) 24px;
+    background: radial-gradient(circle at center, var(--lp-glow), transparent 42%);
+    text-align: center;
+  }
+
+  .not-found-content {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    max-width: 640px;
+  }
+
+  .not-found .eyebrow {
+    color: var(--lp-accent-high);
+    font-family: var(--lp-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .not-found h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
+
+  .not-found p {
+    max-width: 38ch;
+    margin: 0 0 0.5rem;
+    color: var(--lp-fg-muted);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+</style>
