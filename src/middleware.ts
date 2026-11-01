@@ -9,15 +9,24 @@ const maintenanceHtml = `<!doctype html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>ARGVUS - Maintenance</title>
+    <title>ARGVUS - A modular desktop environment for Wayland and Arch Linux, built on Hyprland.</title>
     <link rel="icon" type="image/png" href="${base}favicon.png" />
     <link rel="stylesheet" href="${base}maintenance.css" />
   </head>
   <body>
     <main>
-      <img src="${base}favicon.png" alt="ARGVUS logo" width="112" height="112" />
-      <h1>ARGVUS</h1>
-      <p>The site is under maintenance. We'll be back soon.</p>
+      <img class="logo" src="${base}favicon.png" alt="" width="112" height="112" />
+      <h1>
+        <img
+          class="wordmark"
+          src="${base}brand/argvus-wordmark.svg"
+          alt="ARGVUS"
+          width="240"
+          height="32"
+        />
+      </h1>
+      <p style="margin-bottom: 20px; color: white; opacity: 0.82;">A modular desktop environment for Wayland and Arch Linux, built on Hyprland.</p>
+      <p><small>ARGVUS 0.1.0 will be released soon! <br/>Follow the development on our <a href="https://github.com/argvus/">GitHub</a></small></p>
     </main>
   </body>
 </html>`

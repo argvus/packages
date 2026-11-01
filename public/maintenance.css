@@ -1,6 +1,13 @@
 :root {
   color-scheme: dark;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   background: #0d1117;
   color: #dfe5ea;
 }
@@ -27,11 +34,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 520px;
+  max-width: 780px;
   text-align: center;
 }
 
-img {
+img.logo {
   width: 112px;
   height: 112px;
   margin-bottom: 20px;
@@ -39,9 +46,14 @@ img {
 
 h1 {
   margin: 0 0 10px;
-  font-size: clamp(2rem, 8vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: 0;
+  line-height: 0;
+}
+
+img.wordmark {
+  display: block;
+  width: min(240px, 72vw);
+  height: auto;
+  margin: 0 auto;
 }
 
 p {

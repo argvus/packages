@@ -1,6 +1,7 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro'
 import '../styles/global.css'
+import '../styles/site-identity.css'
 import fs from 'node:fs'
 import { resolve } from 'node:path'
 import siteConfig from '../site-config.json'
@@ -20,17 +21,15 @@ interface Props {
 const {
   title,
   titlePt = title,
-  description = 'Signed Arch Linux package repository for Argvus, the complete Hyprland and Wayland desktop with official component packages.',
-  descriptionPt = 'Repositório de pacotes Arch Linux assinados para o Argvus, o desktop completo para Hyprland e Wayland com pacotes oficiais de componentes.',
+  description = 'Browse the official ARGVUS Arch Linux repository, including signed packages and pacman databases.',
+  descriptionPt = 'Navegue pelo repositório oficial do ARGVUS para Arch Linux, com pacotes assinados e bases do pacman.',
 } = Astro.props
 const base = import.meta.env.BASE_URL
 const siteUrl = 'https://argvus.github.io'
 const pageUrl = Astro.url.href
 const githubOrgUrl = 'https://github.com/orgs/argvus'
-const logotypeUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/logotype.svg'
-const argvusWordmarkUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/argvus-text.svg'
+const logotypeUrl = `${base}brand/argvus-logo.svg`
+const argvusWordmarkUrl = `${base}brand/argvus-wordmark.svg`
 const keywords =
   'argvus, argvus linux, hyprland, wayland, arch linux packages, pacman repository, argvus-appearance, argvus-greeter, argvus-session, argvus-removable-devices, signed packages, linux desktop'
 const contributionConfig = siteConfig.contributionLinks
@@ -94,9 +93,9 @@ const contributionEnabled = contributionConfig.enable
           <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
           {isBeta && <span class="beta-badge">Beta</span>}
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <div class="nav-links">
-            <a class="nav-link" href="https://argvus.github.io/docs/intro/"><i class="fa-solid fa-book-open"></i><span data-i18n="documentation">Documentation</span></a>
+        <nav class="site-nav" aria-label="Main navigation" data-i18n-aria="navAria" data-site-nav>
+          <div class="nav-links" id="site-nav-links">
+            <a class="nav-link" href="https://argvus.github.io/docs/introduction/"><i class="fa-solid fa-book-open"></i><span data-i18n="documentation">Documentation</span></a>
             <div class="nav-dropdown" data-nav-dropdown>
               <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
                 <i class="fa-solid fa-cube"></i>
@@ -133,6 +132,9 @@ const contributionEnabled = contributionConfig.enable
             </div>
           </div>
           <ThemeToggle />
+          <button class="nav-menu-btn" type="button" aria-controls="site-nav-links" aria-expanded="false" aria-label="Menu" data-i18n-aria="navMenu" data-nav-menu>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -143,9 +145,40 @@ const contributionEnabled = contributionConfig.enable
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-bottom">
-          <span>© {new Date().getFullYear()} Argvus</span>
-          <span data-i18n="packagesHosted">Packages hosted on GitHub Pages</span>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a class="brand" href="https://argvus.github.io/">
+              <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
+              <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
+            </a>
+            <p data-i18n="footerTagline">Official package repositories for the ARGVUS desktop environment.</p>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footerRepositories">Repositories</h4>
+            <ul><li><a href={`${base}arch/`} data-i18n="archLinuxRepository">Arch Linux Repository</a></li></ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footerResources">Resources</h4>
+            <ul>
+              <li><a href="https://argvus.github.io/docs/introduction/" data-i18n="documentation">Documentation</a></li>
+              <li><a href={githubOrgUrl} data-i18n="github">GitHub</a></li>
+              <li><a href="https://argvus.github.io/" data-i18n="footerHome">Home</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footerCommunity">Community</h4>
+            <ul>
+              <li><a href="https://t.me/argvusdesktop" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-i18n="footerOfficialChannel">Official channel</span></a></li>
+              <li><a href="https://t.me/argvuscommunity" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-i18n="footerGlobalCommunity">Global community</span></a></li>
+              <li><a href="https://t.me/argvuscommunity_br" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-i18n="footerBrazilCommunity">Brazilian community</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>© {new Date().getFullYear()} ARGVUS</span><span aria-hidden="true">·</span>
+          <a href="https://github.com/argvus/argvus/blob/main/LICENSE" data-i18n="footerLicense">Licensed under GPL-3.0</a><span aria-hidden="true">·</span>
+          <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" data-i18n="footerMaintainer">Maintained by William C. Canin</a>
+          <span class="footer-feedback" data-i18n="packagesHosted">Packages hosted on GitHub Pages</span>
         </div>
       </div>
     </footer>
@@ -161,14 +194,29 @@ const contributionEnabled = contributionConfig.enable
       const langMenu = document.querySelector('[data-lang-menu]')
       const languageCurrent = document.querySelector('[data-language-current]')
       const languageOptions = Array.from(document.querySelectorAll('[data-language-option]'))
+      const siteNav = document.querySelector('[data-site-nav]')
+      const mobileButton = document.querySelector('[data-nav-menu]')
       const languageTranslations = {
         en: {
           documentation: 'Documentation',
+          navAria: 'Main navigation',
           repository: 'Repository',
           archLinux: 'Arch Linux',
           github: 'GitHub',
           donate: 'Donate',
           packagesHosted: 'Packages hosted on GitHub Pages',
+          footerTagline: 'Official package repositories for the ARGVUS desktop environment.',
+          footerRepositories: 'Repositories',
+          archLinuxRepository: 'Arch Linux Repository',
+          footerResources: 'Resources',
+          footerHome: 'Home',
+          footerCommunity: 'Community',
+          footerOfficialChannel: 'Official channel',
+          footerGlobalCommunity: 'Global community',
+          footerBrazilCommunity: 'Brazilian community',
+          footerLicense: 'Licensed under GPL-3.0',
+          footerMaintainer: 'Maintained by William C. Canin',
+          navMenu: 'Menu',
           themeAria: 'Change theme',
           languageAria: 'Change language',
           themeLight: 'Light',
@@ -176,24 +224,33 @@ const contributionEnabled = contributionConfig.enable
           themeSystem: 'System',
           packageRepositories: 'Package repositories',
           rootIndex: 'Index of /packages/',
-          rootLead: 'Binary repositories for Argvus Linux. Arch Linux packages are available now; Debian and RPM directories are reserved for future packaging targets.',
-          pacman: 'Pacman',
-          pacmanLead: 'Install the Argvus signing key, then add this repository to /etc/pacman.conf or include it from /etc/pacman.d/argvus.conf.',
+          rootLead: 'Browse the official ARGVUS Arch Linux repository, including signed packages and pacman databases.',
           name: 'Name',
           lastModified: 'Last modified',
           size: 'Size',
           argvusPackages: 'Argvus Packages',
           directoryLead: 'Browse package files directly, including pacman databases, signatures and binary package archives.',
-          archRepository: 'Arch Linux repository',
-          archRepositoryLead: 'Download and trust the Argvus signing key, then use argvus.conf or copy the pacman block below.',
         },
         pt: {
           documentation: 'Documentação',
+          navAria: 'Navegação principal',
           repository: 'Repositório',
           archLinux: 'Arch Linux',
           github: 'GitHub',
           donate: 'Apoiar',
           packagesHosted: 'Pacotes hospedados no GitHub Pages',
+          footerTagline: 'Repositórios oficiais de pacotes do ambiente de desktop ARGVUS.',
+          footerRepositories: 'Repositórios',
+          archLinuxRepository: 'Repositório Arch Linux',
+          footerResources: 'Recursos',
+          footerHome: 'Início',
+          footerCommunity: 'Comunidade',
+          footerOfficialChannel: 'Canal oficial',
+          footerGlobalCommunity: 'Comunidade global',
+          footerBrazilCommunity: 'Comunidade brasileira',
+          footerLicense: 'Licenciado sob GPL-3.0',
+          footerMaintainer: 'Mantido por William C. Canin',
+          navMenu: 'Menu',
           themeAria: 'Alterar tema',
           languageAria: 'Alterar idioma',
           themeLight: 'Claro',
@@ -201,16 +258,12 @@ const contributionEnabled = contributionConfig.enable
           themeSystem: 'Sistema',
           packageRepositories: 'Repositórios de pacotes',
           rootIndex: 'Índice de /packages/',
-          rootLead: 'Repositórios binários do Argvus Linux. Os pacotes Arch Linux estão disponíveis agora; os diretórios Debian e RPM estão reservados para futuros alvos de empacotamento.',
-          pacman: 'Pacman',
-          pacmanLead: 'Instale a chave de assinatura do Argvus e adicione este repositório a /etc/pacman.conf ou inclua-o a partir de /etc/pacman.d/argvus.conf.',
+          rootLead: 'Navegue pelo repositório oficial do ARGVUS para Arch Linux, com pacotes assinados e bases do pacman.',
           name: 'Nome',
           lastModified: 'Última modificação',
           size: 'Tamanho',
           argvusPackages: 'Pacotes Argvus',
           directoryLead: 'Navegue diretamente pelos arquivos de pacotes, incluindo bancos de dados do pacman, assinaturas e arquivos binários de pacotes.',
-          archRepository: 'Repositório Arch Linux',
-          archRepositoryLead: 'Baixe e confie na chave de assinatura do Argvus; depois use argvus.conf ou copie o bloco do pacman abaixo.',
         },
       }
       const LANGUAGE_KEY = 'argvus-packages-language'
@@ -294,6 +347,7 @@ const contributionEnabled = contributionConfig.enable
       document.addEventListener('click', (e) => {
         if (!e.target.closest('[data-theme-toggle]')) menu.hidden = true
         if (!e.target.closest('[data-lang-toggle]')) langMenu.hidden = true
+        if (!e.target.closest('#site-nav-links') && !e.target.closest('[data-nav-menu]')) setMobileMenu(false)
         if (!e.target.closest('[data-nav-dropdown]')) {
           document.querySelectorAll('[data-nav-dropdown-menu]').forEach((dropdownMenu) => {
             dropdownMenu.hidden = true
@@ -305,6 +359,7 @@ const contributionEnabled = contributionConfig.enable
         if (e.key === 'Escape') {
           menu.hidden = true
           langMenu.hidden = true
+          setMobileMenu(false)
           document.querySelectorAll('[data-nav-dropdown-menu]').forEach((dropdownMenu) => {
             dropdownMenu.hidden = true
           })
@@ -318,6 +373,38 @@ const contributionEnabled = contributionConfig.enable
           dropdownMenu.hidden = !dropdownMenu.hidden
         })
       })
+
+      const setMobileMenu = (open) => {
+        siteNav.toggleAttribute('data-menu-open', open)
+        mobileButton.setAttribute('aria-expanded', String(open))
+      }
+      mobileButton.addEventListener('click', (event) => {
+        event.stopPropagation()
+        setMobileMenu(!siteNav.hasAttribute('data-menu-open'))
+      })
+      siteNav.querySelectorAll('.nav-links a').forEach((anchor) => {
+        anchor.addEventListener('click', () => setMobileMenu(false))
+      })
+      const header = document.querySelector('.site-header')
+      const markScrolled = () => header.toggleAttribute('data-scrolled', window.scrollY > 8)
+      window.addEventListener('scroll', markScrolled, { passive: true })
+      markScrolled()
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const hasHoverPointer = window.matchMedia('(hover: hover)').matches
+      if (hasHoverPointer && !reduceMotion) {
+        document.body.addEventListener('pointermove', (event) => {
+          document.body.style.setProperty('--pointer-x', `${event.clientX}px`)
+          document.body.style.setProperty('--pointer-y', `${event.clientY}px`)
+        })
+        document.querySelectorAll('.packages-hero').forEach((hero) => {
+          hero.addEventListener('pointermove', (event) => {
+            const rect = hero.getBoundingClientRect()
+            hero.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width - 0.5).toFixed(3)}`)
+            hero.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height - 0.5).toFixed(3)}`)
+          })
+        })
+      }
 
       media.addEventListener('change', render)
       render()

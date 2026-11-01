@@ -8,40 +8,22 @@ const index = getDirectoryIndex('')
 <BaseLayout
   title="Argvus Packages"
   titlePt="Pacotes Argvus"
-  descriptionPt="Repositórios binários do Argvus Linux. Os pacotes Arch Linux estão disponíveis agora; os diretórios Debian e RPM estão reservados para futuros alvos de empacotamento."
+  description="Browse the official ARGVUS Arch Linux repository, including signed packages and pacman databases."
+  descriptionPt="Navegue pelo repositório oficial do ARGVUS para Arch Linux, com pacotes assinados e bases do pacman."
 >
   <section class="packages-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
       <span class="eyebrow" data-i18n="packageRepositories">Package repositories</span>
       <h1 data-i18n="rootIndex">Index of /packages/</h1>
       <p class="lead">
-        <span data-i18n="rootLead">Binary repositories for Argvus Linux. Arch Linux packages are available now;
-        Debian and RPM directories are reserved for future packaging targets.</span>
+        <span data-i18n="rootLead">Browse the official ARGVUS Arch Linux repository, including signed packages and pacman databases.</span>
       </p>
     </div>
   </section>
 
   <section class="directory-section">
     <div class="container">
-      <div class="repo-note">
-        <div>
-            <h2 data-i18n="pacman">Pacman</h2>
-            <p data-i18n="pacmanLead">Install the Argvus signing key, then add this repository to /etc/pacman.conf or include it from /etc/pacman.d/argvus.conf.</p>
-        </div>
-        <pre><code>curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
-sudo pacman-key --add /tmp/argvus.gpg
-ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"
-sudo pacman-key --lsign-key "$ARGVUS_KEY"
-
-[argvus]
-SigLevel = Required TrustedOnly
-Server = https://argvus.github.io/packages/arch/$arch
-
-[argvus-extras]
-SigLevel = Required TrustedOnly
-Server = https://argvus.github.io/packages/arch/extras/$arch</code></pre>
-      </div>
-
       <div class="directory-shell">
         <div class="directory-title">
           <h2 data-i18n="rootIndex">Index of /packages/</h2>

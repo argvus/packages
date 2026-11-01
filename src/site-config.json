@@ -1,5 +1,10 @@
 {
-  "maintenance": false,
+  "maintenance": true,
+  "packages_list": {
+    "arch": true,
+    "rpm": false,
+    "debian": false
+  },
   "contributionLinks": {
     "enable": true,
     "mode": "paypal",

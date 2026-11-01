@@ -17,6 +17,7 @@ const titlePt = `Índice de ${index.displayPath} - Pacotes Argvus`
 
 <BaseLayout title={`${title} - Argvus Packages`} titlePt={titlePt}>
   <section class="packages-hero compact">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
       <span class="eyebrow" data-i18n="argvusPackages">Argvus Packages</span>
       <h1 data-i18n="directoryIndex" data-directory-path={index.displayPath}>{title}</h1>
@@ -28,27 +29,6 @@ const titlePt = `Índice de ${index.displayPath} - Pacotes Argvus`
 
   <section class="directory-section">
     <div class="container">
-      {route === 'arch' && (
-        <div class="repo-note">
-          <div>
-            <h2 data-i18n="archRepository">Arch Linux repository</h2>
-            <p data-i18n="archRepositoryLead">Download and trust the Argvus signing key, then use argvus.conf or copy the pacman block below.</p>
-          </div>
-          <pre><code>curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
-sudo pacman-key --add /tmp/argvus.gpg
-ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"
-sudo pacman-key --lsign-key "$ARGVUS_KEY"
-
-[argvus]
-SigLevel = Required TrustedOnly
-Server = https://argvus.github.io/packages/arch/$arch
-
-[argvus-extras]
-SigLevel = Required TrustedOnly
-Server = https://argvus.github.io/packages/arch/extras/$arch</code></pre>
-        </div>
-      )}
-
       <div class="directory-shell">
         <div class="directory-title">
           <h2 data-i18n="directoryIndex" data-directory-path={index.displayPath}>{title}</h2>
