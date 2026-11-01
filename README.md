@@ -94,7 +94,7 @@ Server = https://argvus.github.io/packages/arch/extras/$arch
 
 - Package index: https://argvus.github.io/packages/arch/
 - Development workflow: [DEVELOPMENT.md](./DEVELOPMENT.md)
-- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Contribution guide: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)
 
 ## Related repositories
 
