@@ -129,6 +129,14 @@ const contributionEnabled = contributionConfig.enable
             <div class="lang-toggle-menu" data-lang-menu hidden>
               <button class="lang-option" type="button" data-language-option="en" aria-current="page">English</button>
               <button class="lang-option" type="button" data-language-option="pt">Português</button>
+              <button class="lang-option" type="button" data-language-option="de">Deutsch</button>
+              <button class="lang-option" type="button" data-language-option="es">Español</button>
+              <button class="lang-option" type="button" data-language-option="fr">Français</button>
+              <button class="lang-option" type="button" data-language-option="it">Italiano</button>
+              <button class="lang-option" type="button" data-language-option="ja">日本語</button>
+              <button class="lang-option" type="button" data-language-option="ko">한국어</button>
+              <button class="lang-option" type="button" data-language-option="ru">Русский</button>
+              <button class="lang-option" type="button" data-language-option="zh">中文</button>
             </div>
           </div>
           <ThemeToggle />
@@ -273,6 +281,21 @@ const contributionEnabled = contributionConfig.enable
           notFoundDescription: 'Confira o endereço ou volte ao índice de pacotes.',
           notFoundHome: 'Voltar ao índice de pacotes',
         },
+        es: {}, fr: {}, it: {}, zh: {}, ja: {}, ru: {}, ko: {}, de: {},
+      }
+      const translationKeys = Object.keys(languageTranslations.en)
+      const localizedValues = {
+        es: ['Documentación','Navegación principal','Repositorio','Arch Linux','GitHub','Donar','Paquetes alojados en GitHub Pages','Repositorios oficiales de paquetes para el escritorio ARGVUS.','Repositorios','Repositorio de Arch Linux','Recursos','Inicio','Comunidad','Canal oficial','Comunidad global','Comunidad brasileña','Licencia GPL-3.0','Mantenido por William C. Canin','Menú','Cambiar tema','Cambiar idioma','Claro','Oscuro','Sistema','Repositorios de paquetes','Índice de /packages/','Explora el repositorio oficial de ARGVUS para Arch Linux, con paquetes firmados y bases de datos de pacman.','Nombre','Última modificación','Tamaño','Paquetes Argvus','Explora archivos de paquetes, bases de datos de pacman, firmas y archivos binarios.','Error 404','Página no encontrada','Comprueba la URL o vuelve al índice de paquetes.','Volver al índice de paquetes'],
+        fr: ['Documentation','Navigation principale','Dépôt','Arch Linux','GitHub','Faire un don','Paquets hébergés sur GitHub Pages','Dépôts officiels de paquets pour l’environnement de bureau ARGVUS.','Dépôts','Dépôt Arch Linux','Ressources','Accueil','Communauté','Canal officiel','Communauté mondiale','Communauté brésilienne','Sous licence GPL-3.0','Maintenu par William C. Canin','Menu','Changer le thème','Changer de langue','Clair','Sombre','Système','Dépôts de paquets','Index de /packages/','Parcourez le dépôt officiel ARGVUS pour Arch Linux, avec ses paquets signés et bases pacman.','Nom','Dernière modification','Taille','Paquets Argvus','Parcourez les fichiers, bases pacman, signatures et archives binaires.','Erreur 404','Page introuvable','Vérifiez l’URL ou revenez à l’index des paquets.','Retour à l’index'],
+        it: ['Documentazione','Navigazione principale','Repository','Arch Linux','GitHub','Dona','Pacchetti ospitati su GitHub Pages','Repository ufficiali di pacchetti per l’ambiente desktop ARGVUS.','Repository','Repository Arch Linux','Risorse','Home','Comunità','Canale ufficiale','Comunità globale','Comunità brasiliana','Con licenza GPL-3.0','Gestito da William C. Canin','Menu','Cambia tema','Cambia lingua','Chiaro','Scuro','Sistema','Repository di pacchetti','Indice di /packages/','Esplora il repository ufficiale ARGVUS per Arch Linux, con pacchetti firmati e database pacman.','Nome','Ultima modifica','Dimensione','Pacchetti Argvus','Esplora file, database pacman, firme e archivi binari.','Errore 404','Pagina non trovata','Controlla l’URL o torna all’indice dei pacchetti.','Torna all’indice'],
+        zh: ['文档','主导航','软件仓库','Arch Linux','GitHub','捐赠','托管于 GitHub Pages 的软件包','ARGVUS 桌面环境的官方软件包仓库。','软件仓库','Arch Linux 仓库','资源','首页','社区','官方频道','全球社区','巴西社区','GPL-3.0 许可','由 William C. Canin 维护','菜单','更改主题','更改语言','浅色','深色','系统','软件包仓库','/packages/ 索引','浏览 ARGVUS 官方 Arch Linux 仓库，包括已签名软件包和 pacman 数据库。','名称','最后修改','大小','Argvus 软件包','浏览软件包、pacman 数据库、签名和二进制归档。','404 错误','页面未找到','请检查网址或返回软件包索引。','返回软件包索引'],
+        ja: ['ドキュメント','メインナビゲーション','リポジトリ','Arch Linux','GitHub','寄付','GitHub Pages でホストされたパッケージ','ARGVUS デスクトップ環境の公式パッケージリポジトリ。','リポジトリ','Arch Linux リポジトリ','リソース','ホーム','コミュニティ','公式チャンネル','グローバルコミュニティ','ブラジルコミュニティ','GPL-3.0 ライセンス','William C. Canin が管理','メニュー','テーマを変更','言語を変更','ライト','ダーク','システム','パッケージリポジトリ','/packages/ の索引','署名済みパッケージと pacman データベースを含む ARGVUS 公式 Arch Linux リポジトリを閲覧できます。','名前','最終更新','サイズ','Argvus パッケージ','パッケージ、pacman データベース、署名、バイナリアーカイブを閲覧できます。','404 エラー','ページが見つかりません','URL を確認するか、パッケージ一覧に戻ってください。','パッケージ一覧へ戻る'],
+        de: ['Dokumentation','Hauptnavigation','Paketquelle','Arch Linux','GitHub','Spenden','Pakete auf GitHub Pages gehostet','Offizielle Paketquellen für die ARGVUS Desktop-Umgebung.','Paketquellen','Arch-Linux-Paketquelle','Ressourcen','Startseite','Community','Offizieller Kanal','Globale Community','Brasilianische Community','Lizenziert unter GPL-3.0','Betreut von William C. Canin','Menü','Design ändern','Sprache ändern','Hell','Dunkel','System','Paketquellen','Index von /packages/','Durchsuche das offizielle ARGVUS-Repository für Arch Linux mit signierten Paketen und pacman-Datenbanken.','Name','Zuletzt geändert','Größe','Argvus Pakete','Paketdateien, pacman-Datenbanken, Signaturen und Binärarchive durchsuchen.','404-Fehler','Seite nicht gefunden','Prüfe die URL oder kehre zum Paketindex zurück.','Zurück zum Paketindex'],
+        ru: ['Документация','Основная навигация','Репозиторий','Arch Linux','GitHub','Поддержать','Пакеты размещены на GitHub Pages','Официальные репозитории пакетов среды рабочего стола ARGVUS.','Репозитории','Репозиторий Arch Linux','Ресурсы','Главная','Сообщество','Официальный канал','Глобальное сообщество','Бразильское сообщество','Лицензия GPL-3.0','Поддерживается William C. Canin','Меню','Сменить тему','Сменить язык','Светлая','Тёмная','Системная','Репозитории пакетов','Индекс /packages/','Просмотрите официальный репозиторий ARGVUS для Arch Linux с подписанными пакетами и базами pacman.','Имя','Изменён','Размер','Пакеты Argvus','Просмотр файлов пакетов, баз pacman, подписей и архивов.','Ошибка 404','Страница не найдена','Проверьте адрес или вернитесь к списку пакетов.','К списку пакетов'],
+        ko: ['문서','기본 탐색','저장소','Arch Linux','GitHub','후원','GitHub Pages에 호스팅된 패키지','ARGVUS 데스크톱 환경의 공식 패키지 저장소입니다.','저장소','Arch Linux 저장소','리소스','홈','커뮤니티','공식 채널','글로벌 커뮤니티','브라질 커뮤니티','GPL-3.0 라이선스','William C. Canin 관리','메뉴','테마 변경','언어 변경','밝게','어둡게','시스템','패키지 저장소','/packages/ 색인','서명된 패키지와 pacman 데이터베이스가 포함된 ARGVUS 공식 Arch Linux 저장소를 둘러보세요.','이름','수정 날짜','크기','Argvus 패키지','패키지 파일, pacman 데이터베이스, 서명 및 바이너리 아카이브를 둘러보세요.','404 오류','페이지를 찾을 수 없습니다','URL을 확인하거나 패키지 색인으로 돌아가세요.','패키지 색인으로 돌아가기'],
+      }
+      for (const [language, values] of Object.entries(localizedValues)) {
+        languageTranslations[language] = Object.fromEntries(translationKeys.map((key, index) => [key, values[index]]))
       }
       const LANGUAGE_KEY = 'argvus-packages-language'
 
@@ -302,17 +325,20 @@ const contributionEnabled = contributionConfig.enable
 
       const currentLanguage = () => {
         const stored = localStorage.getItem(LANGUAGE_KEY)
-        if (stored === 'en' || stored === 'pt') return stored
-        return navigator.language.toLowerCase().startsWith('pt') ? 'pt' : 'en'
+        if (stored && languageTranslations[stored]) return stored
+        const browserLanguage = navigator.language.toLowerCase().split('-')[0]
+        return languageTranslations[browserLanguage] ? browserLanguage : 'en'
       }
 
       const setLanguage = (language) => {
         const translations = languageTranslations[language]
         localStorage.setItem(LANGUAGE_KEY, language)
-        document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en'
-        document.title = document.documentElement.dataset[`title${language === 'pt' ? 'Pt' : 'En'}`]
-        document.querySelector('[data-page-description]').content =
-          document.documentElement.dataset[`description${language === 'pt' ? 'Pt' : 'En'}`]
+        document.documentElement.lang = language === 'pt' ? 'pt-BR' : language
+        if (language === 'en' || language === 'pt') {
+          document.title = document.documentElement.dataset[`title${language === 'pt' ? 'Pt' : 'En'}`]
+          document.querySelector('[data-page-description]').content =
+            document.documentElement.dataset[`description${language === 'pt' ? 'Pt' : 'En'}`]
+        }
         languageCurrent.textContent = language.toUpperCase()
         languageOptions.forEach((option) => {
           option.setAttribute('aria-current', String(option.dataset.languageOption === language))
@@ -320,13 +346,15 @@ const contributionEnabled = contributionConfig.enable
         document.querySelectorAll('[data-i18n]').forEach((element) => {
           const key = element.dataset.i18n
           element.textContent = key === 'directoryIndex'
-            ? `${language === 'pt' ? 'Índice de' : 'Index of'} ${element.dataset.directoryPath}`
-            : translations[key]
+            ? `${language === 'pt' ? 'Índice de' : language === 'en' ? 'Index of' : translations.rootIndex.replace('/packages/', '').trim()} ${element.dataset.directoryPath}`
+            : translations[key] || languageTranslations.en[key]
         })
         document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
           element.setAttribute('aria-label', translations[element.dataset.i18nAria])
         })
       }
+
+      setLanguage(currentLanguage())
 
       btn.addEventListener('click', () => {
         menu.hidden = !menu.hidden
