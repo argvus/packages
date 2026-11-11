@@ -127,16 +127,28 @@ const contributionEnabled = contributionConfig.enable
             </button>
 
             <div class="lang-toggle-menu" data-lang-menu hidden>
-              <button class="lang-option" type="button" data-language-option="en" aria-current="page">English</button>
-              <button class="lang-option" type="button" data-language-option="pt">Português</button>
-              <button class="lang-option" type="button" data-language-option="de">Deutsch</button>
-              <button class="lang-option" type="button" data-language-option="es">Español</button>
-              <button class="lang-option" type="button" data-language-option="fr">Français</button>
-              <button class="lang-option" type="button" data-language-option="it">Italiano</button>
-              <button class="lang-option" type="button" data-language-option="ja">日本語</button>
-              <button class="lang-option" type="button" data-language-option="ko">한국어</button>
-              <button class="lang-option" type="button" data-language-option="ru">Русский</button>
-              <button class="lang-option" type="button" data-language-option="zh">中文</button>
+              <label class="lang-search-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" data-lang-search aria-label="Search languages…" placeholder="Search languages…" autocomplete="off" /></label>
+              <div class="lang-options" data-lang-options>
+                <button class="lang-option" type="button" data-language-option="en" data-search="English English en" aria-current="page"><span class="lang-flag">🇬🇧</span>English</button>
+                <button class="lang-option" type="button" data-language-option="pt-br" data-search="Portuguese Brazil Português Brasil pt-br"><span class="lang-flag">🇧🇷</span>Português (Brasil)</button>
+                <button class="lang-option" type="button" data-language-option="pt-pt" data-search="Portuguese Portugal Português pt-pt"><span class="lang-flag">🇵🇹</span>Português (Portugal)</button>
+                <button class="lang-option" type="button" data-language-option="es" data-search="Spanish Español es"><span class="lang-flag">🇪🇸</span>Español</button>
+                <button class="lang-option" type="button" data-language-option="fr" data-search="French Français fr"><span class="lang-flag">🇫🇷</span>Français</button>
+                <button class="lang-option" type="button" data-language-option="it" data-search="Italian Italiano it"><span class="lang-flag">🇮🇹</span>Italiano</button>
+                <button class="lang-option" type="button" data-language-option="zh" data-search="Chinese 中文 zh"><span class="lang-flag">🇨🇳</span>中文</button>
+                <button class="lang-option" type="button" data-language-option="ja" data-search="Japanese 日本語 ja"><span class="lang-flag">🇯🇵</span>日本語</button>
+                <button class="lang-option" type="button" data-language-option="de" data-search="German Deutsch de"><span class="lang-flag">🇩🇪</span>Deutsch</button>
+                <button class="lang-option" type="button" data-language-option="ru" data-search="Russian Русский ru"><span class="lang-flag">🇷🇺</span>Русский</button>
+                <button class="lang-option" type="button" data-language-option="ko" data-search="Korean 한국어 ko"><span class="lang-flag">🇰🇷</span>한국어</button>
+                <button class="lang-option" type="button" data-language-option="hi" data-search="Hindi हिन्दी hi"><span class="lang-flag">🇮🇳</span>हिन्दी</button>
+                <button class="lang-option" type="button" data-language-option="ar" data-search="Arabic العربية ar"><span class="lang-flag">🇸🇦</span>العربية</button>
+                <button class="lang-option" type="button" data-language-option="bn" data-search="Bengali বাংলা bn"><span class="lang-flag">🇧🇩</span>বাংলা</button>
+                <button class="lang-option" type="button" data-language-option="id" data-search="Indonesian Bahasa Indonesia id"><span class="lang-flag">🇮🇩</span>Bahasa Indonesia</button>
+                <button class="lang-option" type="button" data-language-option="ur" data-search="Urdu اردو ur"><span class="lang-flag">🇵🇰</span>اردو</button>
+                <button class="lang-option" type="button" data-language-option="vi" data-search="Vietnamese Tiếng Việt vi"><span class="lang-flag">🇻🇳</span>Tiếng Việt</button>
+                <button class="lang-option" type="button" data-language-option="tr" data-search="Turkish Türkçe tr"><span class="lang-flag">🇹🇷</span>Türkçe</button>
+                <p class="lang-no-results" data-lang-no-results hidden>No languages found.</p>
+              </div>
             </div>
           </div>
           <ThemeToggle />
@@ -202,6 +214,8 @@ const contributionEnabled = contributionConfig.enable
       const langMenu = document.querySelector('[data-lang-menu]')
       const languageCurrent = document.querySelector('[data-language-current]')
       const languageOptions = Array.from(document.querySelectorAll('[data-language-option]'))
+      const languageSearch = document.querySelector('[data-lang-search]')
+      const noLanguageResults = document.querySelector('[data-lang-no-results]')
       const siteNav = document.querySelector('[data-site-nav]')
       const mobileButton = document.querySelector('[data-nav-menu]')
       const languageTranslations = {
@@ -293,10 +307,19 @@ const contributionEnabled = contributionConfig.enable
         de: ['Dokumentation','Hauptnavigation','Paketquelle','Arch Linux','GitHub','Spenden','Pakete auf GitHub Pages gehostet','Offizielle Paketquellen für die ARGVUS Desktop-Umgebung.','Paketquellen','Arch-Linux-Paketquelle','Ressourcen','Startseite','Community','Offizieller Kanal','Globale Community','Brasilianische Community','Lizenziert unter GPL-3.0','Betreut von William C. Canin','Menü','Design ändern','Sprache ändern','Hell','Dunkel','System','Paketquellen','Index von /packages/','Durchsuche das offizielle ARGVUS-Repository für Arch Linux mit signierten Paketen und pacman-Datenbanken.','Name','Zuletzt geändert','Größe','Argvus Pakete','Paketdateien, pacman-Datenbanken, Signaturen und Binärarchive durchsuchen.','404-Fehler','Seite nicht gefunden','Prüfe die URL oder kehre zum Paketindex zurück.','Zurück zum Paketindex'],
         ru: ['Документация','Основная навигация','Репозиторий','Arch Linux','GitHub','Поддержать','Пакеты размещены на GitHub Pages','Официальные репозитории пакетов среды рабочего стола ARGVUS.','Репозитории','Репозиторий Arch Linux','Ресурсы','Главная','Сообщество','Официальный канал','Глобальное сообщество','Бразильское сообщество','Лицензия GPL-3.0','Поддерживается William C. Canin','Меню','Сменить тему','Сменить язык','Светлая','Тёмная','Системная','Репозитории пакетов','Индекс /packages/','Просмотрите официальный репозиторий ARGVUS для Arch Linux с подписанными пакетами и базами pacman.','Имя','Изменён','Размер','Пакеты Argvus','Просмотр файлов пакетов, баз pacman, подписей и архивов.','Ошибка 404','Страница не найдена','Проверьте адрес или вернитесь к списку пакетов.','К списку пакетов'],
         ko: ['문서','기본 탐색','저장소','Arch Linux','GitHub','후원','GitHub Pages에 호스팅된 패키지','ARGVUS 데스크톱 환경의 공식 패키지 저장소입니다.','저장소','Arch Linux 저장소','리소스','홈','커뮤니티','공식 채널','글로벌 커뮤니티','브라질 커뮤니티','GPL-3.0 라이선스','William C. Canin 관리','메뉴','테마 변경','언어 변경','밝게','어둡게','시스템','패키지 저장소','/packages/ 색인','서명된 패키지와 pacman 데이터베이스가 포함된 ARGVUS 공식 Arch Linux 저장소를 둘러보세요.','이름','수정 날짜','크기','Argvus 패키지','패키지 파일, pacman 데이터베이스, 서명 및 바이너리 아카이브를 둘러보세요.','404 오류','페이지를 찾을 수 없습니다','URL을 확인하거나 패키지 색인으로 돌아가세요.','패키지 색인으로 돌아가기'],
+        vi: ['Tài liệu','Điều hướng chính','Kho phần mềm','Arch Linux','GitHub','Ủng hộ','Các gói được lưu trữ trên GitHub Pages','Kho gói chính thức cho môi trường máy tính để bàn ARGVUS.','Kho phần mềm','Kho Arch Linux','Tài nguyên','Trang chủ','Cộng đồng','Kênh chính thức','Cộng đồng toàn cầu','Cộng đồng Brazil','Được cấp phép theo GPL-3.0','Được duy trì bởi William C. Canin','Menu','Đổi giao diện','Đổi ngôn ngữ','Sáng','Tối','Hệ thống','Kho gói','Danh mục /packages/','Duyệt kho Arch Linux chính thức của ARGVUS, gồm các gói đã ký và cơ sở dữ liệu pacman.','Tên','Cập nhật lần cuối','Kích thước','Gói Argvus','Duyệt tệp gói, cơ sở dữ liệu pacman, chữ ký và tệp lưu trữ nhị phân.','Lỗi 404','Không tìm thấy trang','Kiểm tra URL hoặc quay lại danh mục gói.','Quay lại danh mục gói'],
+        hi: ['दस्तावेज़','मुख्य नेविगेशन','रिपॉज़िटरी','Arch Linux','GitHub','दान करें','GitHub Pages पर होस्ट किए गए पैकेज','ARGVUS डेस्कटॉप वातावरण के आधिकारिक पैकेज रिपॉज़िटरी।','रिपॉज़िटरी','Arch Linux रिपॉज़िटरी','संसाधन','होम','समुदाय','आधिकारिक चैनल','वैश्विक समुदाय','ब्राज़ील समुदाय','GPL-3.0 के अंतर्गत लाइसेंस प्राप्त','William C. Canin द्वारा अनुरक्षित','मेनू','थीम बदलें','भाषा बदलें','हल्का','गहरा','सिस्टम','पैकेज रिपॉज़िटरी','/packages/ सूची','हस्ताक्षरित पैकेज और pacman डेटाबेस सहित आधिकारिक ARGVUS Arch Linux रिपॉज़िटरी देखें।','नाम','अंतिम संशोधन','आकार','Argvus पैकेज','पैकेज फ़ाइलें, pacman डेटाबेस, हस्ताक्षर और बाइनरी संग्रह देखें।','404 त्रुटि','पृष्ठ नहीं मिला','URL जाँचें या पैकेज सूची पर लौटें।','पैकेज सूची पर लौटें'],
+        ar: ['الوثائق','التنقل الرئيسي','المستودع','Arch Linux','GitHub','تبرع','حزم مستضافة على GitHub Pages','مستودعات الحزم الرسمية لبيئة سطح المكتب ARGVUS.','المستودعات','مستودع Arch Linux','الموارد','الرئيسية','المجتمع','القناة الرسمية','المجتمع العالمي','مجتمع البرازيل','مرخص بموجب GPL-3.0','بإدارة William C. Canin','القائمة','تغيير المظهر','تغيير اللغة','فاتح','داكن','النظام','مستودعات الحزم','فهرس /packages/','تصفح مستودع ARGVUS الرسمي لـ Arch Linux، بما في ذلك الحزم الموقعة وقواعد بيانات pacman.','الاسم','آخر تعديل','الحجم','حزم Argvus','تصفح ملفات الحزم وقواعد بيانات pacman والتوقيعات والأرشيفات الثنائية.','خطأ 404','الصفحة غير موجودة','تحقق من الرابط أو عد إلى فهرس الحزم.','العودة إلى فهرس الحزم'],
+        bn: ['নথিপত্র','প্রধান নেভিগেশন','রিপোজিটরি','Arch Linux','GitHub','অনুদান','GitHub Pages-এ হোস্ট করা প্যাকেজ','ARGVUS ডেস্কটপ পরিবেশের অফিসিয়াল প্যাকেজ রিপোজিটরি।','রিপোজিটরি','Arch Linux রিপোজিটরি','সম্পদ','হোম','কমিউনিটি','অফিসিয়াল চ্যানেল','বিশ্বব্যাপী কমিউনিটি','ব্রাজিলিয়ান কমিউনিটি','GPL-3.0-এর অধীনে লাইসেন্সপ্রাপ্ত','William C. Canin দ্বারা রক্ষণাবেক্ষিত','মেনু','থিম পরিবর্তন','ভাষা পরিবর্তন','হালকা','গাঢ়','সিস্টেম','প্যাকেজ রিপোজিটরি','/packages/ সূচি','স্বাক্ষরিত প্যাকেজ ও pacman ডেটাবেসসহ ARGVUS-এর অফিসিয়াল Arch Linux রিপোজিটরি দেখুন।','নাম','সর্বশেষ পরিবর্তন','আকার','Argvus প্যাকেজ','প্যাকেজ ফাইল, pacman ডেটাবেস, স্বাক্ষর এবং বাইনারি আর্কাইভ দেখুন।','404 ত্রুটি','পৃষ্ঠা পাওয়া যায়নি','URL পরীক্ষা করুন অথবা প্যাকেজ সূচিতে ফিরে যান।','প্যাকেজ সূচিতে ফিরুন'],
+        id: ['Dokumentasi','Navigasi utama','Repositori','Arch Linux','GitHub','Donasi','Paket dihosting di GitHub Pages','Repositori paket resmi untuk lingkungan desktop ARGVUS.','Repositori','Repositori Arch Linux','Sumber daya','Beranda','Komunitas','Kanal resmi','Komunitas global','Komunitas Brasil','Dilisensikan di bawah GPL-3.0','Dikelola oleh William C. Canin','Menu','Ubah tema','Ubah bahasa','Terang','Gelap','Sistem','Repositori paket','Indeks /packages/','Jelajahi repositori Arch Linux resmi ARGVUS, termasuk paket bertanda tangan dan basis data pacman.','Nama','Terakhir diubah','Ukuran','Paket Argvus','Jelajahi berkas paket, basis data pacman, tanda tangan, dan arsip biner.','Kesalahan 404','Halaman tidak ditemukan','Periksa URL atau kembali ke indeks paket.','Kembali ke indeks paket'],
+        ur: ['دستاویزات','مرکزی نیویگیشن','ریپوزٹری','Arch Linux','GitHub','عطیہ کریں','GitHub Pages پر میزبانی شدہ پیکیجز','ARGVUS ڈیسک ٹاپ ماحول کے لیے سرکاری پیکیج ریپوزٹریز۔','ریپوزٹریز','Arch Linux ریپوزٹری','وسائل','صفحۂ اول','کمیونٹی','سرکاری چینل','عالمی کمیونٹی','برازیلی کمیونٹی','GPL-3.0 کے تحت لائسنس یافتہ','William C. Canin کی نگرانی میں','مینو','تھیم تبدیل کریں','زبان تبدیل کریں','روشن','تاریک','سسٹم','پیکیج ریپوزٹریز','/packages/ اشاریہ','دستخط شدہ پیکیجز اور pacman ڈیٹا بیس سمیت سرکاری ARGVUS Arch Linux ریپوزٹری دیکھیں۔','نام','آخری ترمیم','حجم','Argvus پیکیجز','پیکیج فائلیں، pacman ڈیٹا بیس، دستخط اور بائنری آرکائیوز دیکھیں۔','404 خرابی','صفحہ نہیں ملا','URL چیک کریں یا پیکیج اشاریے پر واپس جائیں۔','پیکیج اشاریے پر واپس جائیں'],
+        tr: ['Belgeler','Ana gezinme','Depo','Arch Linux','GitHub','Bağış yap','GitHub Pages üzerinde barındırılan paketler','ARGVUS masaüstü ortamının resmi paket depoları.','Depolar','Arch Linux deposu','Kaynaklar','Ana sayfa','Topluluk','Resmî kanal','Küresel topluluk','Brezilya topluluğu','GPL-3.0 kapsamında lisanslı','William C. Canin tarafından yürütülüyor','Menü','Temayı değiştir','Dili değiştir','Açık','Koyu','Sistem','Paket depoları','/packages/ dizini','İmzalı paketler ve pacman veritabanları dahil resmi ARGVUS Arch Linux deposuna göz atın.','Ad','Son değiştirilme','Boyut','Argvus Paketleri','Paket dosyalarına, pacman veritabanlarına, imzalara ve ikili arşivlere göz atın.','404 hatası','Sayfa bulunamadı','URL’yi kontrol edin veya paket dizinine dönün.','Paket dizinine dön'],
       }
       for (const [language, values] of Object.entries(localizedValues)) {
         languageTranslations[language] = Object.fromEntries(translationKeys.map((key, index) => [key, values[index]]))
       }
+      languageTranslations['pt-br'] = languageTranslations.pt
+      languageTranslations['pt-pt'] = languageTranslations.pt
       const LANGUAGE_KEY = 'argvus-packages-language'
 
       const currentTheme = () => {
@@ -325,19 +348,20 @@ const contributionEnabled = contributionConfig.enable
 
       const currentLanguage = () => {
         const stored = localStorage.getItem(LANGUAGE_KEY)
-        if (stored && languageTranslations[stored]) return stored
+        if (stored && languageOptions.some((option) => option.dataset.languageOption === stored)) return stored
         const browserLanguage = navigator.language.toLowerCase().split('-')[0]
-        return languageTranslations[browserLanguage] ? browserLanguage : 'en'
+        return languageOptions.some((option) => option.dataset.languageOption === browserLanguage) ? browserLanguage : 'en'
       }
 
       const setLanguage = (language) => {
-        const translations = languageTranslations[language]
+        const translationLanguage = language === 'pt-br' || language === 'pt-pt' ? 'pt' : language
+        const translations = languageTranslations[translationLanguage] || languageTranslations.en
         localStorage.setItem(LANGUAGE_KEY, language)
-        document.documentElement.lang = language === 'pt' ? 'pt-BR' : language
-        if (language === 'en' || language === 'pt') {
-          document.title = document.documentElement.dataset[`title${language === 'pt' ? 'Pt' : 'En'}`]
+        document.documentElement.lang = language === 'pt-br' ? 'pt-BR' : language === 'pt-pt' ? 'pt-PT' : language
+        if (translationLanguage === 'en' || translationLanguage === 'pt') {
+          document.title = document.documentElement.dataset[`title${translationLanguage === 'pt' ? 'Pt' : 'En'}`]
           document.querySelector('[data-page-description]').content =
-            document.documentElement.dataset[`description${language === 'pt' ? 'Pt' : 'En'}`]
+            document.documentElement.dataset[`description${translationLanguage === 'pt' ? 'Pt' : 'En'}`]
         }
         languageCurrent.textContent = language.toUpperCase()
         languageOptions.forEach((option) => {
@@ -346,13 +370,24 @@ const contributionEnabled = contributionConfig.enable
         document.querySelectorAll('[data-i18n]').forEach((element) => {
           const key = element.dataset.i18n
           element.textContent = key === 'directoryIndex'
-            ? `${language === 'pt' ? 'Índice de' : language === 'en' ? 'Index of' : translations.rootIndex.replace('/packages/', '').trim()} ${element.dataset.directoryPath}`
+            ? `${translationLanguage === 'pt' ? 'Índice de' : translationLanguage === 'en' ? 'Index of' : translations.rootIndex.replace('/packages/', '').trim()} ${element.dataset.directoryPath}`
             : translations[key] || languageTranslations.en[key]
         })
         document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
           element.setAttribute('aria-label', translations[element.dataset.i18nAria])
         })
       }
+
+      languageSearch.addEventListener('input', () => {
+        const query = languageSearch.value.trim().toLocaleLowerCase()
+        let visible = 0
+        languageOptions.forEach((option) => {
+          const matches = option.dataset.search.toLocaleLowerCase().includes(query)
+          option.hidden = !matches
+          if (matches) visible += 1
+        })
+        noLanguageResults.hidden = visible > 0
+      })
 
       setLanguage(currentLanguage())
 
@@ -378,6 +413,7 @@ const contributionEnabled = contributionConfig.enable
       langBtn.addEventListener('click', () => {
         langMenu.hidden = !langMenu.hidden
         menu.hidden = true
+        if (!langMenu.hidden) languageSearch.focus()
       })
 
       document.addEventListener('click', (e) => {
