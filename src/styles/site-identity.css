@@ -393,12 +393,13 @@ footer .brand-wordmark {
   right: 0;
 }
 
-.lang-toggle-menu { width: 232px; padding: 7px; }
+.lang-toggle-menu { box-sizing: border-box; width: 300px; max-width: calc(100vw - 24px); padding: 7px; overflow-x: hidden; }
 .lang-search-wrap { display: flex; align-items: center; gap: 9px; margin-bottom: 5px; padding: 8px 10px; border-bottom: 1px solid var(--lp-border-strong); color: var(--lp-fg-muted); }
 .lang-search-wrap i { flex: 0 0 auto; font-size: .8rem; }
 .lang-search-wrap input { min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: var(--lp-fg); font: inherit; font-size: .82rem; }
 .lang-search-wrap input::placeholder { color: var(--lp-fg-dim); }
-.lang-options { max-height: min(320px, 60vh); overflow-y: auto; }
+.lang-options { max-width: 100%; max-height: min(320px, 60vh); overflow-x: hidden; overflow-y: auto; }
+.lang-option { box-sizing: border-box; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
 .lang-option[hidden], .lang-no-results[hidden] { display: none; }
 .lang-flag { display: inline-flex; flex: 0 0 25px; align-items: center; justify-content: center; width: 25px; height: 25px; font-size: 1.05rem; line-height: 1; }
 .lang-no-results { margin: 0; padding: 10px; color: var(--lp-fg-muted); font-size: .82rem; white-space: normal; }

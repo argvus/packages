@@ -120,7 +120,7 @@ const contributionEnabled = contributionConfig.enable
               data-i18n-aria="languageAria"
               aria-haspopup="menu"
             >
-              <span data-language-current>EN</span>
+              <span data-language-current aria-hidden="true">🇬🇧</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
@@ -216,6 +216,7 @@ const contributionEnabled = contributionConfig.enable
       const languageOptions = Array.from(document.querySelectorAll('[data-language-option]'))
       const languageSearch = document.querySelector('[data-lang-search]')
       const noLanguageResults = document.querySelector('[data-lang-no-results]')
+      const languageFlags = { en: '🇬🇧', 'pt-br': '🇧🇷', 'pt-pt': '🇵🇹', es: '🇪🇸', fr: '🇫🇷', it: '🇮🇹', zh: '🇨🇳', ja: '🇯🇵', de: '🇩🇪', ru: '🇷🇺', ko: '🇰🇷', hi: '🇮🇳', ar: '🇸🇦', bn: '🇧🇩', id: '🇮🇩', ur: '🇵🇰', vi: '🇻🇳', tr: '🇹🇷' }
       const siteNav = document.querySelector('[data-site-nav]')
       const mobileButton = document.querySelector('[data-nav-menu]')
       const languageTranslations = {
@@ -363,7 +364,7 @@ const contributionEnabled = contributionConfig.enable
           document.querySelector('[data-page-description]').content =
             document.documentElement.dataset[`description${translationLanguage === 'pt' ? 'Pt' : 'En'}`]
         }
-        languageCurrent.textContent = language.toUpperCase()
+        languageCurrent.textContent = languageFlags[language]
         languageOptions.forEach((option) => {
           option.setAttribute('aria-current', String(option.dataset.languageOption === language))
         })
