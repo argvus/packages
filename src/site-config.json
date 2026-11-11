@@ -1,5 +1,5 @@
 {
-  "maintenance": true,
+  "maintenance": false,
   "packages_list": {
     "arch": true,
     "rpm": false,
