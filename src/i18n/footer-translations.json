@@ -1,0 +1,1005 @@
+{
+  "en": {
+    "tagline": "A modular desktop environment for Wayland and Arch Linux, built on Hyprland.",
+    "docs": "Documentation",
+    "docsLinks": [
+      [
+        "Introduction",
+        "docs/introduction/"
+      ],
+      [
+        "Installation",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Appearance",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Sessions",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "FAQ",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Resources",
+    "resourceLinks": [
+      [
+        "About ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Arch Linux Repository",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Community",
+    "feedback": "Built for the open source community",
+    "license": "Licensed under GPL-3.0",
+    "maintainer": "Maintained by William C. Canin",
+    "channels": [
+      [
+        "Official channel",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Global community",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Brazilian community",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "pt": {
+    "tagline": "Um ambiente de desktop modular para Wayland e Arch Linux, construído sobre o Hyprland.",
+    "docs": "Documentação",
+    "docsLinks": [
+      [
+        "Introdução",
+        "docs/introduction/"
+      ],
+      [
+        "Instalação",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Aparência",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Sessões",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Perguntas frequentes",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Recursos",
+    "resourceLinks": [
+      [
+        "Sobre o ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Repositório Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Comunidade",
+    "feedback": "Feito para a comunidade open source",
+    "license": "Licenciado sob GPL-3.0",
+    "maintainer": "Mantido por William C. Canin",
+    "channels": [
+      [
+        "Canal oficial",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Comunidade global",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Comunidade brasileira",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "es": {
+    "tagline": "Un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
+    "docs": "Documentación",
+    "docsLinks": [
+      [
+        "Introducción",
+        "docs/introduction/"
+      ],
+      [
+        "Instalación",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Apariencia",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Sesiones",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Preguntas frecuentes",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Recursos",
+    "resourceLinks": [
+      [
+        "Acerca de ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Repositorio Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Comunidad",
+    "feedback": "Creado para la comunidad de código abierto",
+    "license": "Con licencia GPL-3.0",
+    "maintainer": "Mantenido por William C. Canin",
+    "channels": [
+      [
+        "Canal oficial",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Comunidad global",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "comunidad brasileña",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "fr": {
+    "tagline": "Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
+    "docs": "Documentations",
+    "docsLinks": [
+      [
+        "Introduction",
+        "docs/introduction/"
+      ],
+      [
+        "Installation",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Apparence",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Séances",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "FAQ",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Ressources",
+    "resourceLinks": [
+      [
+        "À propos d'ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Dépôt Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Communauté",
+    "feedback": "Conçu pour la communauté open source",
+    "license": "Sous licence GPL-3.0",
+    "maintainer": "Entretenu par William C. Canin",
+    "channels": [
+      [
+        "Chaîne officielle",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Communauté mondiale",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Communauté brésilienne",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "it": {
+    "tagline": "Un ambiente desktop modulare per Wayland e Arch Linux, basato su Hyprland.",
+    "docs": "Documentazione",
+    "docsLinks": [
+      [
+        "Introduzione",
+        "docs/introduction/"
+      ],
+      [
+        "Installazione",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Aspetto",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Sessioni",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Domande frequenti",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Risorse",
+    "resourceLinks": [
+      [
+        "Informazioni su ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Repository di Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Comunità",
+    "feedback": "Costruito per la comunità open source",
+    "license": "Concesso in licenza con GPL-3.0",
+    "maintainer": "Mantenuto da William C. Canin",
+    "channels": [
+      [
+        "Canale ufficiale",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Comunità globale",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Comunità brasiliana",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "zh": {
+    "tagline": "基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
+    "docs": "文档",
+    "docsLinks": [
+      [
+        "简介",
+        "docs/introduction/"
+      ],
+      [
+        "安装",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "外观",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "会议",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "常见问题解答",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "资源",
+    "resourceLinks": [
+      [
+        "关于 ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Arch Linux 存储库",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "社区",
+    "feedback": "为开源社区构建",
+    "license": "根据 GPL-3.0 许可",
+    "maintainer": "由 William C. Canin 维护",
+    "channels": [
+      [
+        "官方渠道",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "全球社区",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "巴西社区",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "ja": {
+    "tagline": "Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
+    "docs": "ドキュメント",
+    "docsLinks": [
+      [
+        "はじめに",
+        "docs/introduction/"
+      ],
+      [
+        "インストール",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "外観",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "セッション",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "よくある質問",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "リソース",
+    "resourceLinks": [
+      [
+        "ARGVUS について",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Arch Linux リポジトリ",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "コミュニティ",
+    "feedback": "オープンソース コミュニティ向けに構築",
+    "license": "GPL-3.0 に基づいてライセンス供与",
+    "maintainer": "William C. Canin によって保守されています",
+    "channels": [
+      [
+        "公式チャンネル",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "グローバルコミュニティ",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "ブラジル人コミュニティ",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "de": {
+    "tagline": "Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
+    "docs": "Dokumentation",
+    "docsLinks": [
+      [
+        "Einführung",
+        "docs/introduction/"
+      ],
+      [
+        "Installation",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Aussehen",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Sitzungen",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "FAQ",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Ressourcen",
+    "resourceLinks": [
+      [
+        "Über ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Arch Linux-Repository",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Gemeinschaft",
+    "feedback": "Entwickelt für die Open-Source-Community",
+    "license": "Lizenziert unter GPL-3.0",
+    "maintainer": "Verwaltet von William C. Canin",
+    "channels": [
+      [
+        "Offizieller Kanal",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Globale Gemeinschaft",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Brasilianische Gemeinschaft",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "ru": {
+    "tagline": "Модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
+    "docs": "Документация",
+    "docsLinks": [
+      [
+        "Введение",
+        "docs/introduction/"
+      ],
+      [
+        "Установка",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Внешний вид",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Сеансы",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Часто задаваемые вопросы",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Ресурсы",
+    "resourceLinks": [
+      [
+        "Об АРГВУС",
+        "about/"
+      ],
+      [
+        "Гитхаб",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Репозиторий Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Сообщество",
+    "feedback": "Создан для сообщества открытого исходного кода.",
+    "license": "Лицензия GPL-3.0.",
+    "maintainer": "Поддерживается Уильямом К. Канином.",
+    "channels": [
+      [
+        "Официальный канал",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Глобальное сообщество",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Бразильское сообщество",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "ko": {
+    "tagline": "Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
+    "docs": "문서",
+    "docsLinks": [
+      [
+        "소개",
+        "docs/introduction/"
+      ],
+      [
+        "설치",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "외관",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "세션",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "FAQ",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "리소스",
+    "resourceLinks": [
+      [
+        "ARGVUS 소개",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "아치 리눅스 리포지토리",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "커뮤니티",
+    "feedback": "오픈 소스 커뮤니티를 위해 구축됨",
+    "license": "GPL-3.0에 따라 라이선스가 부여됨",
+    "maintainer": "William C. Canin이 관리함",
+    "channels": [
+      [
+        "공식 채널",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "글로벌 커뮤니티",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "브라질 커뮤니티",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "hi": {
+    "tagline": "Wayland और Arch Linux के लिए एक मॉड्यूलर डेस्कटॉप वातावरण, जिसे Hyprland के शीर्ष पर बनाया गया है।",
+    "docs": "दस्तावेज़ीकरण",
+    "docsLinks": [
+      [
+        "परिचय",
+        "docs/introduction/"
+      ],
+      [
+        "स्थापना",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "दिखावट",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "सत्र",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "अक्सर पूछे जाने वाले प्रश्न",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "संसाधन",
+    "resourceLinks": [
+      [
+        "ARGVUS के बारे में",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Repositorio Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "समुदाय",
+    "feedback": "मुक्त स्रोत समुदाय के लिए निर्मित",
+    "license": "लाइसेंस प्राप्त GPL-3.0",
+    "maintainer": "विलियम सी. कैनिन द्वारा बनाए रखा गया",
+    "channels": [
+      [
+        "आधिकारिक चैनल",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "वैश्विक समुदाय",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "ब्राज़ीलियाई समुदाय",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "ar": {
+    "tagline": "بيئة سطح مكتب معيارية لـ Wayland وArch Linux، مبنية على Hyprland.",
+    "docs": "التوثيق",
+    "docsLinks": [
+      [
+        "مقدمة",
+        "docs/introduction/"
+      ],
+      [
+        "التثبيت",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "المظهر",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "الجلسات",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "الأسئلة المتداولة",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "الموارد",
+    "resourceLinks": [
+      [
+        "حول ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "المستودع Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "المجتمع",
+    "feedback": "بنيت لمجتمع مفتوح المصدر",
+    "license": "مرخصة GPL-3.0",
+    "maintainer": "برعاية ويليام سي كانين",
+    "channels": [
+      [
+        "القناة الرسمية",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "المجتمع العالمي",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "المجتمع البرازيلي",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "bn": {
+    "tagline": "Wayland এবং Arch Linux-এর জন্য একটি মডুলার ডেস্কটপ পরিবেশ, Hyprland-এর উপরে নির্মিত৷",
+    "docs": "ডকুমেন্টেশন",
+    "docsLinks": [
+      [
+        "ভূমিকা",
+        "docs/introduction/"
+      ],
+      [
+        "ইনস্টলেশন",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "চেহারা",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "সেশন",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "প্রায়শই জিজ্ঞাসিত প্রশ্ন",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "সম্পদ",
+    "resourceLinks": [
+      [
+        "প্রায় ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "সংগ্রহস্থল Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "সম্প্রদায়",
+    "feedback": "ওপেন সোর্স সম্প্রদায়ের জন্য নির্মিত",
+    "license": "লাইসেন্সপ্রাপ্ত GPL-3.0",
+    "maintainer": "উইলিয়াম সি ক্যানিন দ্বারা রক্ষণাবেক্ষণ",
+    "channels": [
+      [
+        "অফিসিয়াল চ্যানেল",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "বিশ্ব সম্প্রদায়",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "ব্রাজিলিয়ান সম্প্রদায়",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "id": {
+    "tagline": "Lingkungan desktop modular untuk Wayland dan Arch Linux, dibangun di atas Hyprland.",
+    "docs": "Dokumentasi",
+    "docsLinks": [
+      [
+        "Pendahuluan",
+        "docs/introduction/"
+      ],
+      [
+        "Instalasi",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Penampilan",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Sesi",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Pertanyaan yang sering diajukan",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Sumber daya",
+    "resourceLinks": [
+      [
+        "Tentang ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Repositori Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Masyarakat",
+    "feedback": "Dibangun untuk komunitas open source",
+    "license": "Berlisensi GPL-3.0",
+    "maintainer": "Dikelola oleh William C. Canin",
+    "channels": [
+      [
+        "Saluran resmi",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Komunitas global",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "komunitas Brasil",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "ur": {
+    "tagline": "Wayland اور Arch Linux کے لیے ایک ماڈیولر ڈیسک ٹاپ ماحول، جو Hyprland کے اوپر بنایا گیا ہے۔",
+    "docs": "دستاویزی",
+    "docsLinks": [
+      [
+        "تعارف",
+        "docs/introduction/"
+      ],
+      [
+        "تنصیب",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "ظاہری شکل",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "سیشنز",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "اکثر پوچھے گئے سوالات",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "وسائل",
+    "resourceLinks": [
+      [
+        "ARGVUS کے بارے میں",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "ذخیرہ Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "برادری",
+    "feedback": "اوپن سورس کمیونٹی کے لیے بنایا گیا ہے۔",
+    "license": "لائسنس یافتہ GPL-3.0",
+    "maintainer": "ولیم سی کینن کے زیر انتظام",
+    "channels": [
+      [
+        "آفیشل چینل",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "عالمی برادری",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "برازیل کی کمیونٹی",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "vi": {
+    "tagline": "Môi trường máy tính để bàn dạng mô-đun dành cho Wayland và Arch Linux, được xây dựng dựa trên Hyprland.",
+    "docs": "Tài liệu",
+    "docsLinks": [
+      [
+        "Giới thiệu",
+        "docs/introduction/"
+      ],
+      [
+        "Cài đặt",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Ngoại hình",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Phiên",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Câu hỏi thường gặp",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Tài nguyên",
+    "resourceLinks": [
+      [
+        "Giới thiệu về ARGVUS",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Kho lưu trữ Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "cộng đồng",
+    "feedback": "Được xây dựng cho cộng đồng nguồn mở",
+    "license": "Được cấp phép GPL-3.0",
+    "maintainer": "Được duy trì bởi William C. Canin",
+    "channels": [
+      [
+        "Kênh chính thức",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Cộng đồng toàn cầu",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "cộng đồng người Brazil",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  },
+  "tr": {
+    "tagline": "Wayland ve Arch Linux için, Hyprland temel alınarak oluşturulmuş modüler bir masaüstü ortamı.",
+    "docs": "Dokümantasyon",
+    "docsLinks": [
+      [
+        "Giriş",
+        "docs/introduction/"
+      ],
+      [
+        "Kurulum",
+        "docs/getting-started/installation/install/"
+      ],
+      [
+        "Görünüm",
+        "docs/user-guide/appearance/"
+      ],
+      [
+        "Oturumlar",
+        "docs/user-guide/sessions/"
+      ],
+      [
+        "Sık sorulan sorular",
+        "docs/user-guide/faq/"
+      ]
+    ],
+    "resources": "Kaynaklar",
+    "resourceLinks": [
+      [
+        "ARGVUS Hakkında",
+        "about/"
+      ],
+      [
+        "GitHub",
+        "https://github.com/orgs/argvus"
+      ],
+      [
+        "Depo Arch Linux",
+        "/packages/arch/"
+      ]
+    ],
+    "community": "Topluluk",
+    "feedback": "Açık kaynak topluluğu için tasarlandı",
+    "license": "Lisanslı GPL-3.0",
+    "maintainer": "William C. Canin tarafından sürdürülmektedir",
+    "channels": [
+      [
+        "Resmi kanal",
+        "https://t.me/argvusdesktop"
+      ],
+      [
+        "Küresel topluluk",
+        "https://t.me/argvuscommunity"
+      ],
+      [
+        "Brezilya topluluğu",
+        "https://t.me/argvuscommunity_br"
+      ]
+    ]
+  }
+}

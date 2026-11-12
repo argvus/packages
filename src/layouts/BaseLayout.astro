@@ -96,6 +96,8 @@ const contributionEnabled = contributionConfig.enable
         <nav class="site-nav" aria-label="Main navigation" data-i18n-aria="navAria" data-site-nav>
           <div class="nav-links" id="site-nav-links">
             <a class="nav-link" href="https://argvus.github.io/docs/introduction/"><i class="fa-solid fa-book-open"></i><span data-i18n="documentation">Documentation</span></a>
+            <a class="nav-link" href="https://argvus.github.io/news/" data-news-link><i class="fa-regular fa-newspaper"></i><span data-i18n="navNews">News</span></a>
+            <a class="nav-link nav-link-feed" href="https://argvus.github.io/news/feed.xml" data-rss-link aria-label="RSS feed" title="RSS feed" data-i18n-aria="navFeed"><i class="fa-solid fa-rss" aria-hidden="true"></i><span>RSS</span></a>
             <div class="nav-dropdown" data-nav-dropdown>
               <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
                 <i class="fa-solid fa-cube"></i>
@@ -171,39 +173,61 @@ const contributionEnabled = contributionConfig.enable
               <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
               <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
             </a>
-            <p data-i18n="footerTagline">Official package repositories for the ARGVUS desktop environment.</p>
+            <p data-footer-text="tagline">A modular desktop environment for Wayland and Arch Linux, built on Hyprland.</p>
           </div>
           <div class="footer-col">
-            <h4 data-i18n="footerRepositories">Repositories</h4>
-            <ul><li><a href={`${base}arch/`} data-i18n="archLinuxRepository">Arch Linux Repository</a></li></ul>
-          </div>
-          <div class="footer-col">
-            <h4 data-i18n="footerResources">Resources</h4>
+            <h4 data-footer-text="docs">Documentation</h4>
             <ul>
-              <li><a href="https://argvus.github.io/docs/introduction/" data-i18n="documentation">Documentation</a></li>
-              <li><a href={githubOrgUrl} data-i18n="github">GitHub</a></li>
-              <li><a href="https://argvus.github.io/" data-i18n="footerHome">Home</a></li>
+              <li><a data-footer-doc="introduction" href="https://argvus.github.io/docs/introduction/">Introduction</a></li>
+              <li><a data-footer-doc="installation" href="https://argvus.github.io/docs/getting-started/installation/install/">Installation</a></li>
+              <li><a data-footer-doc="appearance" href="https://argvus.github.io/docs/user-guide/appearance/">Appearance</a></li>
+              <li><a data-footer-doc="sessions" href="https://argvus.github.io/docs/user-guide/sessions/">Sessions</a></li>
+              <li><a data-footer-doc="faq" href="https://argvus.github.io/docs/user-guide/faq/">FAQ</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h4 data-i18n="footerCommunity">Community</h4>
+            <h4 data-footer-text="resources">Resources</h4>
             <ul>
-              <li><a href="https://t.me/argvusdesktop" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-i18n="footerOfficialChannel">Official channel</span></a></li>
-              <li><a href="https://t.me/argvuscommunity" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-i18n="footerGlobalCommunity">Global community</span></a></li>
-              <li><a href="https://t.me/argvuscommunity_br" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-i18n="footerBrazilCommunity">Brazilian community</span></a></li>
+              <li><a data-footer-about href="https://argvus.github.io/about/">About ARGVUS</a></li>
+              <li><a href={githubOrgUrl}>GitHub</a></li>
+              <li><a data-footer-arch href="https://argvus.github.io/packages/arch/">Arch Linux Repository</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-footer-text="news">News</h4>
+            <ul class="footer-news-links" aria-label="News languages">
+              <li><a href="https://argvus.github.io/news/">English</a></li><li><a href="https://argvus.github.io/news/pt-br/">Português (Brasil)</a></li>
+              <li><a href="https://argvus.github.io/news/pt-pt/">Português (Portugal)</a></li><li><a href="https://argvus.github.io/news/es/">Español</a></li>
+              <li><a href="https://argvus.github.io/news/fr/">Français</a></li><li><a href="https://argvus.github.io/news/it/">Italiano</a></li>
+              <li><a href="https://argvus.github.io/news/zh/">中文</a></li><li><a href="https://argvus.github.io/news/ja/">日本語</a></li>
+              <li><a href="https://argvus.github.io/news/de/">Deutsch</a></li><li><a href="https://argvus.github.io/news/ru/">Русский</a></li>
+              <li><a href="https://argvus.github.io/news/ko/">한국어</a></li><li><a href="https://argvus.github.io/news/hi/">हिन्दी</a></li>
+              <li><a href="https://argvus.github.io/news/ar/">العربية</a></li><li><a href="https://argvus.github.io/news/bn/">বাংলা</a></li>
+              <li><a href="https://argvus.github.io/news/id/">Bahasa Indonesia</a></li><li><a href="https://argvus.github.io/news/ur/">اردو</a></li>
+              <li><a href="https://argvus.github.io/news/vi/">Tiếng Việt</a></li><li><a href="https://argvus.github.io/news/tr/">Türkçe</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-footer-text="community">Community</h4>
+            <ul>
+              <li><a href="https://t.me/argvusdesktop" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-footer-channel="0">Official channel</span></a></li>
+              <li><a href="https://t.me/argvuscommunity" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-footer-channel="1">Global community</span></a></li>
+              <li><a href="https://t.me/argvuscommunity_br" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span data-footer-channel="2">Brazilian community</span></a></li>
             </ul>
           </div>
         </div>
         <div class="footer-meta">
           <span>© {new Date().getFullYear()} ARGVUS</span><span aria-hidden="true">·</span>
-          <a href="https://github.com/argvus/argvus/blob/main/LICENSE" data-i18n="footerLicense">Licensed under GPL-3.0</a><span aria-hidden="true">·</span>
-          <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" data-i18n="footerMaintainer">Maintained by William C. Canin</a>
-          <span class="footer-feedback" data-i18n="packagesHosted">Packages hosted on GitHub Pages</span>
+          <a href="https://github.com/argvus/argvus/blob/main/LICENSE" data-footer-text="license">Licensed under GPL-3.0</a><span aria-hidden="true">·</span>
+          <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" data-footer-text="maintainer">Maintained by William C. Canin</a>
+          <span class="footer-feedback" data-footer-text="feedback">Built for the open source community</span>
         </div>
       </div>
     </footer>
 
     <script>
+      import footerTranslations from '../i18n/footer-translations.json'
+
       const STORAGE_KEY = 'starlight-theme'
       const root = document.documentElement
       const media = window.matchMedia('(prefers-color-scheme: light)')
@@ -219,6 +243,8 @@ const contributionEnabled = contributionConfig.enable
       const languageFlags = { en: '🇬🇧', 'pt-br': '🇧🇷', 'pt-pt': '🇵🇹', es: '🇪🇸', fr: '🇫🇷', it: '🇮🇹', zh: '🇨🇳', ja: '🇯🇵', de: '🇩🇪', ru: '🇷🇺', ko: '🇰🇷', hi: '🇮🇳', ar: '🇸🇦', bn: '🇧🇩', id: '🇮🇩', ur: '🇵🇰', vi: '🇻🇳', tr: '🇹🇷' }
       const siteNav = document.querySelector('[data-site-nav]')
       const mobileButton = document.querySelector('[data-nav-menu]')
+      const newsLink = document.querySelector('[data-news-link]')
+      const rssLink = document.querySelector('[data-rss-link]')
       const languageTranslations = {
         en: {
           documentation: 'Documentation',
@@ -257,8 +283,11 @@ const contributionEnabled = contributionConfig.enable
           notFoundTitle: 'Page not found',
           notFoundDescription: 'Check the URL or return to the package index.',
           notFoundHome: 'Back to package index',
+          navNews: 'News',
+          navFeed: 'RSS feed',
         },
         pt: {
+          navNews: 'Notícias', navFeed: 'Feed RSS',
           documentation: 'Documentação',
           navAria: 'Navegação principal',
           repository: 'Repositório',
@@ -321,6 +350,17 @@ const contributionEnabled = contributionConfig.enable
       }
       languageTranslations['pt-br'] = languageTranslations.pt
       languageTranslations['pt-pt'] = languageTranslations.pt
+      const newsLabels = {
+        es: ['Noticias', 'Feed RSS'], fr: ['Actualités', 'Flux RSS'], it: ['Notizie', 'Feed RSS'],
+        zh: ['新闻', 'RSS 订阅'], ja: ['ニュース', 'RSSフィード'], de: ['Neuigkeiten', 'RSS-Feed'],
+        ru: ['Новости', 'RSS-лента'], ko: ['뉴스', 'RSS 피드'], hi: ['समाचार', 'RSS फ़ीड'],
+        ar: ['الأخبار', 'خلاصة RSS'], bn: ['সংবাদ', 'RSS ফিড'], id: ['Berita', 'Feed RSS'],
+        ur: ['خبریں', 'RSS فیڈ'], vi: ['Tin tức', 'Nguồn RSS'], tr: ['Haberler', 'RSS akışı'],
+      }
+      for (const [language, [navNews, navFeed]] of Object.entries(newsLabels)) {
+        languageTranslations[language].navNews = navNews
+        languageTranslations[language].navFeed = navFeed
+      }
       const LANGUAGE_KEY = 'argvus-packages-language'
 
       const currentTheme = () => {
@@ -357,8 +397,31 @@ const contributionEnabled = contributionConfig.enable
       const setLanguage = (language) => {
         const translationLanguage = language === 'pt-br' || language === 'pt-pt' ? 'pt' : language
         const translations = languageTranslations[translationLanguage] || languageTranslations.en
+        const footer = footerTranslations[translationLanguage] || footerTranslations.en
         localStorage.setItem(LANGUAGE_KEY, language)
         document.documentElement.lang = language === 'pt-br' ? 'pt-BR' : language === 'pt-pt' ? 'pt-PT' : language
+        const newsLanguagePath = language === 'en' ? '' : `${language}/`
+        newsLink.href = `https://argvus.github.io/news/${newsLanguagePath}`
+        rssLink.href = `https://argvus.github.io/news/${newsLanguagePath}feed.xml`
+        rssLink.title = translations.navFeed
+        document.querySelectorAll('[data-footer-text]').forEach((element) => {
+          const key = element.dataset.footerText
+          element.textContent = key === 'news' ? translations.navNews : footer[key]
+        })
+        document.querySelectorAll('[data-footer-doc]').forEach((element) => {
+          const doc = footer.docsLinks[{ introduction: 0, installation: 1, appearance: 2, sessions: 3, faq: 4 }[element.dataset.footerDoc]]
+          element.textContent = doc[0]
+          const localePrefix = ['en', 'pt-pt', 'hi', 'ar', 'bn', 'id', 'ur', 'vi', 'tr'].includes(language)
+            ? ''
+            : language === 'pt-br' ? 'pt/' : language === 'zh' ? 'zh-cn/' : `${language}/`
+          element.href = `https://argvus.github.io/${localePrefix}${doc[1]}`
+        })
+        document.querySelector('[data-footer-about]').textContent = footer.resourceLinks[0][0]
+        document.querySelector('[data-footer-about]').href = `https://argvus.github.io/${language === 'en' ? '' : `${language}/`}about/`
+        document.querySelector('[data-footer-arch]').textContent = footer.resourceLinks[2][0]
+        document.querySelectorAll('[data-footer-channel]').forEach((element) => {
+          element.textContent = footer.channels[Number(element.dataset.footerChannel)][0]
+        })
         if (translationLanguage === 'en' || translationLanguage === 'pt') {
           document.title = document.documentElement.dataset[`title${translationLanguage === 'pt' ? 'Pt' : 'En'}`]
           document.querySelector('[data-page-description]').content =
